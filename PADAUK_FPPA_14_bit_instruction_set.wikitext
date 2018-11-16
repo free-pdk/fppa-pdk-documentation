@@ -265,10 +265,6 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |-
 | 0x0100<br/>...<br/>0x017F ||0||0||0||0||0||1||0||colspan="7"|*||colspan="6"|''?''
 |-
-| 0x0E00<br/>...<br/>0x0EFF ||0||0||1||1||1||0||colspan="8"|*||colspan="6"|''?''
-|-
-| 0x0F00<br/>...<br/>0x0F7F ||0||0||1||1||1||1||0||colspan="7"|*||colspan="6"|''?''
-|-
 
 
 |}
