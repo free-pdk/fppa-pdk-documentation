@@ -142,7 +142,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |-
 | 0x0B.. ||0||0||1||0||1||1||0||colspan="7"|''M''||align="left"| XOR M, A   ||ZF||  ||  ||  ||align="left"| M ← M ^ A
 |-
-| 0x0B.. ||0||0||1||0||1||1||0||colspan="7"|''M''||align="left"| MOV M, A   ||ZF||  ||  ||  ||align="left"| M ← A
+| 0x0B.. ||0||0||1||0||1||1||1||colspan="7"|''M''||align="left"| MOV M, A   ||ZF||  ||  ||  ||align="left"| M ← A
 |-
 | 0x0C.. ||0||0||1||1||0||0||0||colspan="7"|''M''||align="left"| ADD A, M   ||ZF||CF||AC||OV||align="left"| A ← A + M
 |-
