@@ -9,6 +9,10 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |-
 | 0x0000 ||0||0||0||0||0||0||0||0||0||0||0||0||0||0||align="left"| NOP     ||  ||  ||  ||  ||align="left"| No operation
 |-
+| 0x0006 ||0||0||0||0||0||0||0||0||0||0||0||1||1||0||align="left"| LDSPTL  ||??||??||??||??||align="left"| A ← [SP]
+|-
+| 0x0007 ||0||0||0||0||0||0||0||0||0||0||0||1||1||1||align="left"| LDSPTH  ||??||??||??||??||align="left"| A ← [SP+1]
+|-
 |colspan="21"|
 |-
 !        ||0||0||0||0||0||0||0||1||1||colspan="5"|''opcode''||colspan="6"|Miscellaneous instructions
@@ -86,7 +90,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |-
 | 0x01.. ||0||0||0||0||0||1||1||0||colspan="6"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
 |-
-| 0x01.. ||0||0||0||0||0||1||1||1||colspan="6"|''IO''||align="left"| MOV A, IO ||  ||  ||  ||  ||align="left"| A ← IO
+| 0x01.. ||0||0||0||0||0||1||1||1||colspan="6"|''IO''||align="left"| MOV A, IO ||ZF||  ||  ||  ||align="left"| A ← IO
 |-
 |colspan="21"|
 |-
@@ -142,7 +146,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |-
 | 0x0B.. ||0||0||1||0||1||1||0||colspan="7"|''M''||align="left"| XOR M, A   ||ZF||  ||  ||  ||align="left"| M ← M ^ A
 |-
-| 0x0B.. ||0||0||1||0||1||1||1||colspan="7"|''M''||align="left"| MOV M, A   ||ZF||  ||  ||  ||align="left"| M ← A
+| 0x0B.. ||0||0||1||0||1||1||1||colspan="7"|''M''||align="left"| MOV M, A   ||  ||  ||  ||  ||align="left"| M ← A
 |-
 | 0x0C.. ||0||0||1||1||0||0||0||colspan="7"|''M''||align="left"| ADD A, M   ||ZF||CF||AC||OV||align="left"| A ← A + M
 |-
@@ -163,7 +167,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |colspan="21"|
 |-
 
-!        ||0||0||colspan="5"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| Operations with memory
+!        ||0||1||colspan="5"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| Operations with memory
 |-
 | 0x10.. ||0||1||0||0||0||0||0||colspan="7"|''M''||align="left"| ADDC M      ||ZF||CF||AC||OV||align="left"| M ← M + CF
 |-
@@ -264,6 +268,10 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 | 0x0080<br/>...<br/>0x00BF ||0||0||0||0||0||0||1||0||colspan="6"|*||colspan="6"|''?''
 |-
 | 0x0100<br/>...<br/>0x017F ||0||0||0||0||0||1||0||colspan="7"|*||colspan="6"|''?''
+|-
+| 0x0E00<br/>...<br/>0x0EFF ||0||0||1||1||1||0||colspan="8"|*||colspan="6"|''?''
+|-
+| 0x0F00<br/>...<br/>0x0F7F ||0||0||1||1||1||1||0||colspan="7"|*||colspan="6"|''?''
 |-
 
 
