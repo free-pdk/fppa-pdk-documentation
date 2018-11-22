@@ -1,0 +1,40 @@
+0x0000: 12 55 AA FF             ? marker (0xFFAA5512)
+0x0004: 01 00 00 00             ? (1) 
+0x0008: 14 00 00 00             ! version (0x14)
+0x000C: 35 F3 B6 1E             ? checksum of some sort, changes complete when code is changed in IDE
+
+0x0010: 00 00 00 00             ? (0)
+0x0014: 03 00 00 00             ? (3)
+0x0018: 3F 30 00 00             ? (0x3F30)
+0x001C: 00 00 00 00             ? (0)
+
+0x0020: 00 08 00 00             ! code size (0x800)
+0x0024: E0 07 00 00             ! usable code size (0x07E0) same value as reported from IDE (ROM Size)
+0x0026: 00 00                   ! extra length1
+0x0028: 00 00                   ! extra length2
+0x002A: 00 00                   ?
+0x002C: 00 00                   ! extra length3
+
+...
+0x003C: A1 2A                   ! OTP_ID (0x2AA1)
+0x003E: 13                      ! OTP_WAY (0x13)
+0x003F: 04                      ? BOOT_TYPE (4)
+
+0x005A: 89 07                   ! remain free code (0x789) same value as reported from IDE
+
+...
+
+0x0080: 50 46 53 31 35 34 00    ! controller name string "PFS154"
+
+0x0090: 05 13 06 64 60 61 55 .. ?
+
+0x00A0: 30 2E 38 33 42 31 37 00 ! compiler/IDE version string "0.83B17"
+
+...
+
+0x00D0: 00 00                   ! extra length4
+
+...
+
+0x00E0: 12 .. .. 89             ! 16 byte key for code encryption
+0x0100: <end / extra data>
