@@ -1,0 +1,81 @@
+Reference: http://www.eevblog.com/forum/blog/eevblog-1144-padauk-programmer-reverse-engineering/msg1990262/#msg1990262
+Thanks to user oPossum
+
+0_0000_0000_0000  nop
+0_0000_0000_0000  trap
+0_0000_0001_0000  addc     a
+0_0000_0001_0001  subc     a
+0_0000_0001_0010  izsn     a
+0_0000_0001_0011  dzsn     a
+0_0000_0001_0111  pcadd    a
+0_0000_0001_1000  not      a
+0_0000_0001_1001  neg      a
+0_0000_0001_1010  sr       a
+0_0000_0001_1011  sl       a
+0_0000_0001_1100  src      a
+0_0000_0001_1101  slc      a
+0_0000_0001_1110  swap     a
+0_0000_0011_0000  wdreset
+0_0000_0011_0010  pushaf
+0_0000_0011_0011  popaf
+0_0000_0011_0101  reset
+0_0000_0011_0110  stopsys
+0_0000_0011_0111  stopexe
+0_0000_0011_1000  engint
+0_0000_0011_1001  disgint
+0_0000_0011_1010  ret
+0_0000_0011_1011  reti
+0_0000_011p_pppp  xor      IO,a
+0_0000_100p_pppp  mov      IO,a
+0_0000_101p_pppp  mov      a,IO
+0_0000_110w_www0  stt16    word
+0_0000_110w_www1  ldt16    word
+0_0000_111w_www0  idxm     index,a
+0_0000_111w_www1  idxm     a,index
+0_0001_kkkk_kkkk  ret      k
+0_0010_bbb0_mmmm  t0sn     M.n
+0_0010_bbb1_mmmm  t1sn     M.n
+0_0011_bbb0_mmmm  set0     M.n
+0_0011_bbb1_mmmm  set1     M.n
+0_0100_00mm_mmmm  add      M,a
+0_0100_01mm_mmmm  sub      M,a
+0_0100_10mm_mmmm  addc     M,a
+0_0100_11mm_mmmm  subc     M,a
+0_0101_00mm_mmmm  and      M,a
+0_0101_01mm_mmmm  or       M,a
+0_0101_10mm_mmmm  xor      M,a
+0_0101_11mm_mmmm  mov      M,a
+0_0110_00mm_mmmm  add      a,M
+0_0110_01mm_mmmm  sub      a,M
+0_0110_10mm_mmmm  addc     a,M
+0_0110_11mm_mmmm  subc     a,M
+0_0111_00mm_mmmm  and      a,M
+0_0111_01mm_mmmm  or       a,M
+0_0111_10mm_mmmm  xor      a,M
+0_0111_11mm_mmmm  mov      a,M
+0_1000_10mm_mmmm  izsn     M
+0_1000_11mm_mmmm  dzsn     M
+0_1001_00mm_mmmm  inc      M
+0_1001_01mm_mmmm  dec      M
+0_1001_10mm_mmmm  clear    M
+0_1001_11mm_mmmm  xch      M
+0_1010_00mm_mmmm  not      M
+0_1010_01mm_mmmm  neg      M
+0_1010_10mm_mmmm  sr       M
+0_1010_11mm_mmmm  sl       M
+0_1011_00mm_mmmm  src      M
+0_1011_01mm_mmmm  slc      M
+0_1011_10mm_mmmm  ceqsn    a,M
+0_1100_bbbp_pppp  t0sn     IO.n
+0_1101_bbbp_pppp  t1sn     IO.n
+0_1110_bbbp_pppp  set0     IO.n
+0_1111_bbbp_pppp  set1     IO.n
+1_0000_kkkk_kkkk  add      a,I
+1_0001_kkkk_kkkk  sub      a,I
+1_0010_kkkk_kkkk  ceqsn    a,I
+1_0100_kkkk_kkkk  and      a,I
+1_0101_kkkk_kkkk  or       a,I
+1_0110_kkkk_kkkk  xor      a,I
+1_0111_kkkk_kkkk  mov      a,I
+1_10aa_aaaa_aaaa  goto     label
+1_11aa_aaaa_aaaa  call     label
