@@ -1,0 +1,103 @@
+Reference: http://www.eevblog.com/forum/blog/eevblog-1144-padauk-programmer-reverse-engineering/msg1990223/#msg1990223
+Thanks to user oPossum
+
+0000_0000_0000_0000  nop
+0000_0000_0001_0000  addc     a
+0000_0000_0001_0001  subc     a
+0000_0000_0001_0010  izsn     a
+0000_0000_0001_0011  dzsn     a
+0000_0000_0001_0111  pcadd    a
+0000_0000_0001_1000  not      a
+0000_0000_0001_1001  neg      a
+0000_0000_0001_1010  sr       a
+0000_0000_0001_1011  sl       a
+0000_0000_0001_1100  src      a
+0000_0000_0001_1101  slc      a
+0000_0000_0001_1110  swap     a
+0000_0000_0001_1111  delay    a
+0000_0000_0011_0000  wdreset
+0000_0000_0011_0010  pushaf
+0000_0000_0011_0011  popaf
+0000_0000_0011_0101  reset
+0000_0000_0011_0110  stopsys
+0000_0000_0011_0111  stopexe
+0000_0000_0011_1000  engint
+0000_0000_0011_1001  disgint
+0000_0000_0011_1010  ret
+0000_0000_0011_1011  reti
+0000_0000_10pp_pppp  mov      IO,a
+0000_0000_11pp_pppp  mov      a,IO
+0000_0001_kkkk_kkkk  cneqsn   a,I
+0000_001w_wwww_www0  stt16    word
+0000_001w_wwww_www1  ldt16    word
+0000_100w_wwww_www0  idxm     index,a
+0000_100w_wwww_www1  idxm     a,index
+0000_101w_wwww_www0  ldtabl   word
+0000_101w_wwww_www1  ldtabh   word
+0000_1110_kkkk_kkkk  delay    I
+0000_1111_kkkk_kkkk  ret      I
+0001_0000_00pp_pppp  xor      IO,a
+0001_0000_01pp_pppp  xor      a,IO
+0001_011m_mmmm_mmmm  cneqsn   a,M
+0001_1000_kkkk_kkkk  add      a,I
+0001_1001_kkkk_kkkk  sub      a,I
+0001_1010_kkkk_kkkk  ceqsn    a,I
+0001_1011_kkkk_kkkk  comp     a,I
+0001_1100_kkkk_kkkk  and      a,I
+0001_1101_kkkk_kkkk  or       a,I
+0001_1110_kkkk_kkkk  xor      a,I
+0001_1111_kkkk_kkkk  mov      a,I
+0010_000b_bbpp_pppp  t0sn     IO.n
+0010_001b_bbpp_pppp  t1sn     IO.n
+0010_010b_bbpp_pppp  set0     IO.n
+0010_011b_bbpp_pppp  set1     IO.n
+0010_100b_bbpp_pppp  tog      IO.n
+0010_101b_bbpp_pppp  wait0    IO.n
+0010_110b_bbpp_pppp  wait1    IO.n
+0010_111b_bbpp_pppp  swapc    IO.n
+0011_000m_mmmm_mmmm  nmov     M,a
+0011_001m_mmmm_mmmm  nmov     a,M
+0011_010m_mmmm_mmmm  nadd     M,a
+0011_011m_mmmm_mmmm  nadd     a,M
+0011_100m_mmmm_mmmm  ceqsn    M,a
+0011_101m_mmmm_mmmm  ceqsn    a,M
+0011_110m_mmmm_mmmm  comp     M,a
+0011_111m_mmmm_mmmm  comp     a,M
+0100_000m_mmmm_mmmm  add      M,a
+0100_001m_mmmm_mmmm  add      a,M
+0100_011m_mmmm_mmmm  sub      a,M
+0100_100m_mmmm_mmmm  addc     M,a
+0100_101m_mmmm_mmmm  addc     a,M
+0100_010m_mmmm_mmmm  sub      M,a
+0100_111m_mmmm_mmmm  subc     a,M
+0100_110m_mmmm_mmmm  subc     M,a
+0101_000m_mmmm_mmmm  and      M,a
+0101_001m_mmmm_mmmm  and      a,M
+0101_010m_mmmm_mmmm  or       M,a
+0101_011m_mmmm_mmmm  or       a,M
+0101_100m_mmmm_mmmm  xor      M,a
+0101_101m_mmmm_mmmm  xor      a,M
+0101_110m_mmmm_mmmm  mov      M,a
+0101_111m_mmmm_mmmm  mov      a,M
+0110_000m_mmmm_mmmm  addc     M
+0110_001m_mmmm_mmmm  subc     M
+0110_010m_mmmm_mmmm  izsn     M
+0110_011m_mmmm_mmmm  dzsn     M
+0110_100m_mmmm_mmmm  inc      M
+0110_101m_mmmm_mmmm  dec      M
+0110_110m_mmmm_mmmm  clear    M
+0110_111m_mmmm_mmmm  xch      M
+0111_000m_mmmm_mmmm  not      M
+0111_001m_mmmm_mmmm  neg      M
+0111_010m_mmmm_mmmm  sr       M
+0111_011m_mmmm_mmmm  sl       M
+0111_100m_mmmm_mmmm  src      M
+0111_101m_mmmm_mmmm  slc      M
+0111_110m_mmmm_mmmm  swap     M
+0111_111m_mmmm_mmmm  delay    M
+1000_bbbm_mmmm_mmmm  t0sn     M.n
+1001_bbbm_mmmm_mmmm  t1sn     M.n
+1010_bbbm_mmmm_mmmm  set0     M.n
+1011_bbbm_mmmm_mmmm  set1     M.n
+110a_aaaa_aaaa_aaaa  goto     label
+111a_aaaa_aaaa_aaaa  call     label
