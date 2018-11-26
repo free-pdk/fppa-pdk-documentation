@@ -1,0 +1,92 @@
+Reference: http://www.eevblog.com/forum/blog/eevblog-1144-padauk-programmer-reverse-engineering/msg1990253/#msg1990253
+Thanks to user oPossum
+
+00_0000_0000_0000  nop
+00_0000_0000_0110  ldsptl
+00_0000_0000_0111  ldspth
+00_0000_0110_0000  addc     a
+00_0000_0110_0001  subc     a
+00_0000_0110_0010  izsn     a
+00_0000_0110_0011  dzsn     a
+00_0000_0110_0111  pcadd    a
+00_0000_0110_1000  not      a
+00_0000_0110_1001  neg      a
+00_0000_0110_1010  sr       a
+00_0000_0110_1011  sl       a
+00_0000_0110_1100  src      a
+00_0000_0110_1101  slc      a
+00_0000_0110_1110  swap     a
+00_0000_0111_0000  wdreset
+00_0000_0111_0010  pushaf
+00_0000_0111_0011  popaf
+00_0000_0111_0101  reset
+00_0000_0111_0110  stopsys
+00_0000_0111_0111  stopexe
+00_0000_0111_1000  engint
+00_0000_0111_1001  disgint
+00_0000_0111_1010  ret
+00_0000_0111_1011  reti
+00_0000_0111_1100  mul
+00_0000_11pp_pppp  xor      IO,a
+00_0001_10pp_pppp  mov      IO,a
+00_0001_11pp_pppp  mov      a,IO
+00_0010_kkkk_kkkk  ret      k
+00_0011_0www_www0  stt16    word
+00_0011_0www_www1  ldt16    word
+00_0011_1www_www0  idxm     index,a
+00_0011_1www_www1  idxm     a,index
+00_010b_bbpp_pppp  swapc    IO.n
+00_0110_0mmm_mmmm  comp     a,M
+00_0110_1mmm_mmmm  comp     M,a
+00_0111_0mmm_mmmm  nadd     a,M
+00_0111_1mmm_mmmm  nadd     M,a
+00_1000_0mmm_mmmm  add      M,a
+00_1000_1mmm_mmmm  sub      M,a
+00_1001_0mmm_mmmm  addc     M,a
+00_1001_1mmm_mmmm  subc     M,a
+00_1010_0mmm_mmmm  and      M,a
+00_1010_1mmm_mmmm  or       M,a
+00_1011_0mmm_mmmm  xor      M,a
+00_1011_1mmm_mmmm  mov      M,a
+00_1100_0mmm_mmmm  add      a,M
+00_1100_1mmm_mmmm  sub      a,M
+00_1101_0mmm_mmmm  addc     a,M
+00_1101_1mmm_mmmm  subc     a,M
+00_1110_0mmm_mmmm  and      a,M
+00_1110_1mmm_mmmm  or       a,M
+00_1111_0mmm_mmmm  xor      a,M
+00_1111_1mmm_mmmm  mov      a,M
+01_0000_0mmm_mmmm  addc     M
+01_0000_1mmm_mmmm  subc     M
+01_0001_0mmm_mmmm  izsn     M
+01_0001_1mmm_mmmm  dzsn     M
+01_0010_0mmm_mmmm  inc      M
+01_0010_1mmm_mmmm  dec      M
+01_0011_0mmm_mmmm  clear    M
+01_0011_1mmm_mmmm  xch      M
+01_0100_0mmm_mmmm  not      M
+01_0100_1mmm_mmmm  neg      M
+01_0101_0mmm_mmmm  sr       M
+01_0101_1mmm_mmmm  sl       M
+01_0110_0mmm_mmmm  src      M
+01_0110_1mmm_mmmm  slc      M
+01_0111_0mmm_mmmm  ceqsn    a,M
+01_0111_1mmm_mmmm  cneqsn   a,M
+01_100b_bbpp_pppp  t0sn     IO.n
+01_101b_bbpp_pppp  t1sn     IO.n
+01_110b_bbpp_pppp  set0     IO.n
+01_111b_bbpp_pppp  set1     IO.n
+10_000b_bbmm_mmmm  t0sn     M.n
+10_001b_bbmm_mmmm  t1sn     M.n
+10_010b_bbmm_mmmm  set0     M.n
+10_011b_bbmm_mmmm  set1     M.n
+10_1000_kkkk_kkkk  add      a,I
+10_1001_kkkk_kkkk  sub      a,I
+10_1010_kkkk_kkkk  ceqsn    a,I
+10_1011_kkkk_kkkk  cneqsn   a,I
+10_1100_kkkk_kkkk  and      a,I
+10_1101_kkkk_kkkk  or       a,I
+10_1110_kkkk_kkkk  xor      a,I
+10_1111_kkkk_kkkk  mov      a,I
+11_0aaa_aaaa_aaaa  goto     label
+11_1aaa_aaaa_aaaa  call     label
