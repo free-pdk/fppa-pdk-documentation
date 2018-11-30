@@ -9,7 +9,7 @@
 0x001C: 00 00 00 00             ? (0)
 
 0x0020: 00 08 00 00             ! code size (0x800)
-0x0024: E0 07 00 00             ! usable code size (0x07E0) same value as reported from IDE (ROM Size)
+0x0024: E0 07                   ! usable code size (0x07E0) same value as reported from IDE (ROM Size)
 0x0026: 00 00                   ! extra length1
 0x0028: 00 00                   ! extra length2
 0x002A: 00 00                   ?
