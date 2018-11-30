@@ -220,21 +220,21 @@ These devices feature a 13-bit wide code memory. Byte order is little endian.
 
 !        ||1||0||colspan="3"|''opcode''||colspan="8"|''8-bit immediate''||colspan="6"| Operations with A and 8-bit literal
 |-
-| 0x28.. ||1||0||0||0||0||colspan="8"|''k''||     align="left"| ADD A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A + k
+| 0x10.. ||1||0||0||0||0||colspan="8"|''k''||     align="left"| ADD A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A + k
 |-
-| 0x29.. ||1||0||0||0||1||colspan="8"|''k''||     align="left"| SUB A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A - k
+| 0x11.. ||1||0||0||0||1||colspan="8"|''k''||     align="left"| SUB A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A - k
 |-
-| 0x2A.. ||1||0||0||1||0||colspan="8"|''k''||     align="left"| CEQSN A, ''k''  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A equals k
+| 0x12.. ||1||0||0||1||0||colspan="8"|''k''||     align="left"| CEQSN A, ''k''  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A equals k
 |-
-| 0x2B.. ||1||0||0||1||1||colspan="8"|''k''||     align="left"| CNEQSN A, ''k'' ||ZF||CF||AC||OV||align="left"| Skip next instruction if A not equals k
+| 0x13.. ||1||0||0||1||1||colspan="8"|''k''||     align="left"| CNEQSN A, ''k'' ||ZF||CF||AC||OV||align="left"| Skip next instruction if A not equals k
 |-
-| 0x2C.. ||1||0||1||0||0||colspan="8"|''k''||     align="left"| AND A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A & k
+| 0x14.. ||1||0||1||0||0||colspan="8"|''k''||     align="left"| AND A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A & k
 |-
-| 0x2D.. ||1||0||1||0||1||colspan="8"|''k''||     align="left"| OR A, ''k''     ||ZF||  ||  ||  ||align="left"| A ← A | k
+| 0x15.. ||1||0||1||0||1||colspan="8"|''k''||     align="left"| OR A, ''k''     ||ZF||  ||  ||  ||align="left"| A ← A | k
 |-
-| 0x2E.. ||1||0||1||1||0||colspan="8"|''k''||     align="left"| XOR A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A ^ k
+| 0x16.. ||1||0||1||1||0||colspan="8"|''k''||     align="left"| XOR A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A ^ k
 |-
-| 0x2F.. ||1||0||1||1||1||colspan="8"|''k''||     align="left"| MOV A, ''k''    ||  ||  ||  ||  ||align="left"| A ← k
+| 0x17.. ||1||0||1||1||1||colspan="8"|''k''||     align="left"| MOV A, ''k''    ||  ||  ||  ||  ||align="left"| A ← k
 |-
 |colspan="20"|
 |-
