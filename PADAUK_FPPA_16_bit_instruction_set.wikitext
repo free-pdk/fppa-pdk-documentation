@@ -1,0 +1,312 @@
+==PADAUK FPPA core devices (16 bit)==
+These devices feature a 16-bit wide code memory. Byte order is little endian.
+
+{|class="wikitable" style="text-align:center"
+|+ 16-bit FPPA instruction set
+! Hex ||1<br/>5||1<br/>4||1<br/>3||1<br/>2||1<br/>1||1<br/>0||<br/>9||<br/>8||<br/>7||<br/>6||<br/>5||<br/>4||<br/>3||<br/>2||<br/>1||<br/>0|| Mnemonic||ZF<br/>?||CF<br/>?||AC<br/>?||OV<br/>?||Description
+|-
+|colspan="23"|
+|-
+| 0x0000 ||0||0||0||0||0||0||0||0||0||0||0||0||0||0||0||0||align="left"| NOP     ||  ||  ||  ||  ||align="left"| No operation
+|-
+| 0x0006 ||0||0||0||0||0||0||0||0||0||0||0||0||0||1||1||0||align="left"| LDSPTL  ||??||??||??||??||align="left"| A ← LowByte@CodeMem(WORD[SP])
+|-
+| 0x0007 ||0||0||0||0||0||0||0||0||0||0||0||0||0||1||1||1||align="left"| LDSPTH  ||??||??||??||??||align="left"| A ← HighByteB@Codemem(WORD[SP])
+|-
+|colspan="23"|
+|-
+!        ||0||0||0||0||0||0||0||0||0||0||0||1||colspan="4"|''opcode''||colspan="6"|Miscellaneous instructions
+|-
+| 0x0010 ||0||0||0||0||0||0||0||0||0||0||0||1||0||0||0||0||align="left"| ADDC A  ||ZF||CF||AC||OV||align="left"| A ← A + CF
+|-                        
+| 0x0011 ||0||0||0||0||0||0||0||0||0||0||0||1||0||0||0||1||align="left"| SUBC A  ||ZF||CF||AC||OV||align="left"| A ← A - CF
+|-                        
+| 0x0012 ||0||0||0||0||0||0||0||0||0||0||0||1||0||0||1||0||align="left"| IZSN A  ||ZF||CF||AC||OV||align="left"| Increment A and skip next instruction if A is zero 
+|-                        
+| 0x0013 ||0||0||0||0||0||0||0||0||0||0||0||1||0||0||1||1||align="left"| DZSN A  ||ZF||CF||AC||OV||align="left"| Decrement A and skip next instruction if A is zero 
+|-                        
+| 0x0014 ||0||0||0||0||0||0||0||0||0||0||0||1||0||1||0||0||colspan="6"| ''?''
+|-                        
+| 0x0015 ||0||0||0||0||0||0||0||0||0||0||0||1||0||1||0||1||colspan="6"| ''?''
+|-                        
+| 0x0016 ||0||0||0||0||0||0||0||0||0||0||0||1||0||1||1||0||colspan="6"| ''?''
+|-                        
+| 0x0017 ||0||0||0||0||0||0||0||0||0||0||0||1||0||1||1||1||align="left"| PCADD A ||  ||  ||  ||  ||align="left"| Add A to PC
+|-                        
+| 0x0018 ||0||0||0||0||0||0||0||0||0||0||0||1||1||0||0||0||align="left"| NOT A   ||ZF||  ||  ||  ||align="left"| A ← ~A
+|-                        
+| 0x0019 ||0||0||0||0||0||0||0||0||0||0||0||1||1||0||0||1||align="left"| NEG A   ||ZF||  ||  ||  ||align="left"| A ← NEG(A)
+|-                        
+| 0x001A ||0||0||0||0||0||0||0||0||0||0||0||1||1||0||1||0||align="left"| SR A    ||  ||CF||  ||  ||align="left"| A ← A >> 1
+|-                        
+| 0x001B ||0||0||0||0||0||0||0||0||0||0||0||1||1||0||1||1||align="left"| SL A    ||  ||CF||  ||  ||align="left"| A ← A << 1
+|-                        
+| 0x001C ||0||0||0||0||0||0||0||0||0||0||0||1||1||1||0||0||align="left"| SRC A   ||  ||CF||  ||  ||align="left"| A ← CF:A >> 1
+|-                        
+| 0x001D ||0||0||0||0||0||0||0||0||0||0||0||1||1||1||0||1||align="left"| SLC A   ||  ||CF||  ||  ||align="left"| A ← A:CF << 1
+|-                        
+| 0x001E ||0||0||0||0||0||0||0||0||0||0||0||1||1||1||1||0||align="left"| SWAP A  ||  ||  ||  ||  ||align="left"| Swap the high nibble and low nibble of A
+|-                        
+| 0x001F ||0||0||0||0||0||0||0||0||0||0||0||1||1||1||1||1||align="left"| DELAY A ||  ||  ||  ||  ||align="left"| Delay A+1 cycles, at end A ← 0
+|-
+|colspan="23"|
+|-
+| 0x0030 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||0||0||align="left"| WDRESET ||  ||  ||  ||  ||align="left"| Reset Watchdog timer
+|-                  
+| 0x0031 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||0||1||colspan="6"| ''?''
+|-                  
+| 0x0032 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||1||0||align="left"| PUSHAF  ||  ||  ||  ||  ||align="left"| Push A and flags to stack
+|-                  
+| 0x0033 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||1||1||align="left"| POPAF   ||ZF||CF||AC||OV||align="left"| Pop A and flags from stack
+|-                  
+| 0x0034 ||0||0||0||0||0||0||0||0||0||0||1||1||0||1||0||0||colspan="6"| ''?''
+|-                  
+| 0x0035 ||0||0||0||0||0||0||0||0||0||0||1||1||0||1||0||1||align="left"| RESET   ||  ||  ||  ||  ||align="left"| Reset the whole chip
+|-                  
+| 0x0036 ||0||0||0||0||0||0||0||0||0||0||1||1||0||1||1||0||align="left"| STOPSYS ||  ||  ||  ||  ||align="left"| System halt (OSC disabled)
+|-                  
+| 0x0037 ||0||0||0||0||0||0||0||0||0||0||1||1||0||1||1||1||align="left"| STOPEXE ||  ||  ||  ||  ||align="left"| CPU halt (OSC active to output clock, SYSCLK disabled to save power)
+|-                  
+| 0x0038 ||0||0||0||0||0||0||0||0||0||0||1||1||1||0||0||0||align="left"| ENGINT  ||  ||  ||  ||  ||align="left"| Global interrupt enbale
+|-                  
+| 0x0039 ||0||0||0||0||0||0||0||0||0||0||1||1||1||0||0||1||align="left"| DISGINT ||  ||  ||  ||  ||align="left"| Global interrupt disable
+|-                  
+| 0x003A ||0||0||0||0||0||0||0||0||0||0||1||1||1||0||1||0||align="left"| RET     ||  ||  ||  ||  ||align="left"| Return from subroutine
+|-                  
+| 0x003B ||0||0||0||0||0||0||0||0||0||0||1||1||1||0||1||1||align="left"| RETI    ||  ||  ||  ||  ||align="left"| Return from interrupt
+|-                  
+| 0x003C ||0||0||0||0||0||0||0||0||0||0||1||1||1||1||0||0||align="left"| MUL     ||  ||  ||  ||  ||align="left"| Multiply (if available)
+|-                  
+| 0x003D ||0||0||0||0||0||0||0||0||0||0||1||1||1||1||0||1||colspan="6"| ''?''
+|-                  
+| 0x003E ||0||0||0||0||0||0||0||0||0||0||1||1||1||1||1||0||colspan="6"| ''?''
+|-                  
+| 0x003F ||0||0||0||0||0||0||0||0||0||0||1||1||1||1||1||1||colspan="6"| ''?''
+|-
+|colspan="23"|
+|-
+| 0x004.<br/>0x005. ||0||0||0||0||0||0||0||0||0||1||0||k||k||k||k||k||align="left"| PMODE k   ||  ||  ||  ||  ||align="left"| Set PMODE k
+|-
+| 0x0060 ||0||0||0||0||0||0||0||0||0||1||1||0||n||n||n||n||align="left"| POPWPC n  ||  ||  ||  ||  ||align="left"| Pop word PC(core n) from stack
+|-
+| 0x0070 ||0||0||0||0||0||0||0||0||0||1||1||1||n||n||n||n||align="left"| PUSHWPC n ||  ||  ||  ||  ||align="left"| Push word PC(core n) to stack
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||0||0||0||0||colspan="3"|''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
+|-
+| 0x008.<br/>...<br/>0x00B. ||0||0||0||0||0||0||0||0||1||0||colspan="6"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
+|-
+| 0x00C.<br/>...<br/>0x00F. ||0||0||0||0||0||0||0||0||1||1||colspan="6"|''IO''||align="left"| MOV A, IO ||ZF||  ||  ||  ||align="left"| A ← IO
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||0||colspan="3"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| 16 bit memory operations
+|-
+| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
+|-
+| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
+|-
+| 0x04..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||0||align="left"| POPW M    ||  ||  ||  ||  ||align="left"| Pop word from stack to memory M (last bit of M set to 0, M must be word aligned)
+|-
+| 0x05..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||1||align="left"| PUSHW M   ||  ||  ||  ||  ||align="left"| Push word from memory M to stack (last bit of M set to 1, M must be word aligned)
+|-
+| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||0||align="left"| IGOTO M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 0, M must be word aligned)
+|-
+| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||1||align="left"| ICALL M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 1, M must be word aligned)
+|-
+| 0x08..<br/>0x09.. ||0||0||0||0||1||0||0||colspan="8"|''M''||0||align="left"| IDXM M, A ||  ||  ||  ||  ||align="left"| [M] ← A (last bit of M set to 0, M must be word aligned), 2 cycles
+|-
+| 0x08..<br/>0x09.. ||0||0||0||0||1||0||0||colspan="8"|''M''||1||align="left"| IDXM A, M ||  ||  ||  ||  ||align="left"| A ← [M] (last bit of M set to 1, M must be word aligned), 2 cycles
+|-
+| 0x0A..<br/>0x0B.. ||0||0||0||0||1||0||1||colspan="8"|''M''||0||align="left"| LDTABL M  ||  ||  ||  ||  ||align="left"| A ← LowByte@CodeMem(M) (last bit of M set to 0, M must be word aligned), 2 cycles
+|-
+| 0x0A..<br/>0x0B.. ||0||0||0||0||1||0||1||colspan="8"|''M''||1||align="left"| LDTABH M  ||  ||  ||  ||  ||align="left"| A ← HighByte@CodeMem(M) (last bit of M set to 1, M must be word aligned), 2 cycles
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||0||1||1||1||''c''||colspan="8"|''8-bit immediate''||colspan="6"| Operations with 8-bit literal
+|-
+| 0x0E.. ||0||0||0||0||1||1||1||0||colspan="8"|''k''||align="left"| DELAY ''k''     ||  ||  ||  ||  ||align="left"| Delay k+1 cycles, at end A ← 0
+|-
+| 0x0F.. ||0||0||0||0||1||1||1||1||colspan="8"|''k''||align="left"| RET ''k''       ||  ||  ||  ||  ||align="left"| A ← k and return from subroutine
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||1||0||0||0||0||0||''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
+|-
+| 0x1000<br/>...<br/>0x103F ||0||0||0||1||0||0||0||0||0||0||colspan="6"|''IO''||align="left"| XOR IO, A ||  ||  ||  ||  ||align="left"| IO ← IO ^ A
+|-
+| 0x1040<br/>...<br/>0x107F ||0||0||0||1||0||0||0||0||0||1||colspan="6"|''IO''||align="left"| XOR A, IO ||ZF||  ||  ||  ||align="left"| A ← A ^ IO
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||1||0||1||''c''|| colspan="9"|''9-bit MEM addr''||colspan="6"| Operations with A and memory
+|-
+| 0x14..<br/>0x15.. ||0||0||0||1||0||1||0||colspan="9"|''M''||align="left"| CNEQSN M, A  ||ZF||CF||AC||OV||align="left"| Skip next instruction if M is not equal to A (flags changed according to (M-A))
+|-
+| 0x16..<br/>0x17.. ||0||0||0||1||0||1||1||colspan="9"|''M''||align="left"| CNEQSN A, M  ||ZF||CF||AC||OV||align="left"| Skip next instruction if M is not equal to A (flags changed according to (A-M))
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||0||1||1||colspan="3"|''opcode''||colspan="8"|''8-bit immediate''||colspan="6"| Operations with A and 8-bit literal
+|-
+| 0x18.. ||0||0||0||1||1||0||0||0||colspan="8"|''k''||     align="left"| ADD A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A + k
+|-
+| 0x19.. ||0||0||0||1||1||0||0||1||colspan="8"|''k''||     align="left"| SUB A, ''k''    ||ZF||CF||AC||OV||align="left"| A ← A - k
+|-
+| 0x1A.. ||0||0||0||1||1||0||1||0||colspan="8"|''k''||     align="left"| CEQSN A, ''k''  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A equals k
+|-
+| 0x1B.. ||0||0||0||1||1||0||1||1||colspan="8"|''k''||     align="left"| CNEQSN A, ''k'' ||ZF||CF||AC||OV||align="left"| Skip next instruction if A not equals k
+|-
+| 0x1C.. ||0||0||0||1||1||1||0||0||colspan="8"|''k''||     align="left"| AND A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A & k
+|-
+| 0x1D.. ||0||0||0||1||1||1||0||1||colspan="8"|''k''||     align="left"| OR A, ''k''     ||ZF||  ||  ||  ||align="left"| A ← A | k
+|-
+| 0x1E.. ||0||0||0||1||1||1||1||0||colspan="8"|''k''||     align="left"| XOR A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A ^ k
+|-
+| 0x1F.. ||0||0||0||1||1||1||1||1||colspan="8"|''k''||     align="left"| MOV A, ''k''    ||  ||  ||  ||  ||align="left"| A ← k
+|-
+|colspan="23"|
+|-
+
+!        ||0||0||1||0|| colspan="3"|''c''|| colspan="3"|''bit pos''||colspan="6"|''6-bit IO addr''||colspan="6"| Bit operations with IO
+|-
+| 0x20..<br/>0x21.. ||0||0||1||0||0||0||0|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| T0SN IO.n  ||  ||  ||  ||  ||align="left"| Test bit n of IO and skip next instruction if clear
+|-                                
+| 0x22..<br/>0x23.. ||0||0||1||0||0||0||1|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| T1SN IO.n  ||  ||  ||  ||  ||align="left"| Test bit n of IO and skip next instruction if set
+|-                                
+| 0x24..<br/>0x25.. ||0||0||1||0||0||1||0|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| SET0 IO.n  ||  ||  ||  ||  ||align="left"| Clear bit n of IO
+|-                                
+| 0x26..<br/>0x27.. ||0||0||1||0||0||1||1|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| SET1 IO.n  ||  ||  ||  ||  ||align="left"| Set bit n of IO
+|-                                
+| 0x28..<br/>0x29.. ||0||0||1||0||1||0||0|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| TOG IO.n   ||  ||  ||  ||  ||align="left"| Toggle bit n of IO
+|-                                
+| 0x2A..<br/>0x2B.. ||0||0||1||0||1||0||1|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| WAIT0 IO.n ||  ||  ||  ||  ||align="left"| Stop execution until bit n of IO is low
+|-                                
+| 0x2C..<br/>0x2D.. ||0||0||1||0||1||1||0|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| WAIT1 IO.n ||  ||  ||  ||  ||align="left"| Stop execution until bit n of IO is high
+|-                                
+| 0x2E..<br/>0x2F.. ||0||0||1||0||1||1||1|| colspan="3"|''n''||colspan="6"|''IO''||align="left"| SWAPC IO.n ||  ||CF||  ||  ||align="left"| Swap bit IO.n with CF is high
+|-
+|colspan="23"|
+|-
+
+!        ||0||colspan="6"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| Operations with A and memory
+|-
+| 0x30..<br/>0x31.. ||0||0||1||1||0||0||0||colspan="9"|''M''||align="left"| NMOV A, M   ||ZF||  ||  ||  ||align="left"| A ← NEG(M)
+|-
+| 0x32..<br/>0x33.. ||0||0||1||1||0||0||1||colspan="9"|''M''||align="left"| NMOV M, A   ||  ||  ||  ||  ||align="left"| M ← NEG(A)
+|-
+| 0x34..<br/>0x35.. ||0||0||1||1||0||1||0||colspan="9"|''M''||align="left"| NADD A, M   ||ZF||CF||AC||OV||align="left"| A ← M + NEG(A)
+|-
+| 0x36..<br/>0x37.. ||0||0||1||1||0||1||1||colspan="9"|''M''||align="left"| NADD M, A   ||ZF||CF||AC||OV||align="left"| M ← NEG(M) + A
+|-
+| 0x38..<br/>0x39.. ||0||0||1||1||1||0||0||colspan="9"|''M''||align="left"| CEQSN A, M  ||ZF||CF||AC||OV||align="left"| Skip next instruction if M is equal to A (flags changed according to (A-M))
+|-
+| 0x3A..<br/>0x3B.. ||0||0||1||1||1||0||1||colspan="9"|''M''||align="left"| CEQSN M, A  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A is equal to M (flags changed according to (M-A))
+|-
+| 0x3C..<br/>0x3D.. ||0||0||0||1||1||0||0||colspan="9"|''M''||align="left"| COMP A, M   ||ZF||CF||AC||OV||align="left"| Compare A with M (flags changed according to (A-M))
+|-
+| 0x3E..<br/>0x3F.. ||0||0||0||1||1||0||1||colspan="9"|''M''||align="left"| COMP M, A   ||ZF||CF||AC||OV||align="left"| Compare M with A (flags changed according to (M-A))
+|-
+| 0x40..<br/>0x41.. ||0||0||1||0||0||0||0||colspan="9"|''M''||align="left"| ADD M, A   ||ZF||CF||AC||OV||align="left"| M ← M + A
+|-
+| 0x42..<br/>0x43.. ||0||0||1||0||0||0||1||colspan="9"|''M''||align="left"| ADD A, M   ||ZF||CF||AC||OV||align="left"| A ← A + M
+|-
+| 0x44..<br/>0x45.. ||0||0||1||0||0||1||0||colspan="9"|''M''||align="left"| SUB M, A   ||ZF||CF||AC||OV||align="left"| M ← M - A
+|-
+| 0x46..<br/>0x47.. ||0||0||1||0||0||1||1||colspan="9"|''M''||align="left"| SUB A, M   ||ZF||CF||AC||OV||align="left"| A ← A - M
+|-
+| 0x48..<br/>0x49.. ||0||0||1||0||1||0||0||colspan="9"|''M''||align="left"| ADDC M, A  ||ZF||CF||AC||OV||align="left"| M ← M + A + CF
+|-
+| 0x4A..<br/>0x4B.. ||0||0||1||0||1||0||1||colspan="9"|''M''||align="left"| ADDC A, M  ||ZF||CF||AC||OV||align="left"| A ← A + M + CF
+|-
+| 0x4C..<br/>0x4D.. ||0||0||1||0||1||1||0||colspan="9"|''M''||align="left"| SUBC M, A  ||ZF||CF||AC||OV||align="left"| M ← M - A - CF
+|-
+| 0x4E..<br/>0x4F.. ||0||0||1||0||1||1||1||colspan="9"|''M''||align="left"| SUBC A, M  ||ZF||CF||AC||OV||align="left"| A ← A - M - CF
+|-
+| 0x50..<br/>0x51.. ||0||0||1||1||0||0||0||colspan="9"|''M''||align="left"| AND M, A   ||ZF||  ||  ||  ||align="left"| M ← M & A
+|-
+| 0x52..<br/>0x53.. ||0||0||1||1||0||0||1||colspan="9"|''M''||align="left"| AND A, M   ||ZF||  ||  ||  ||align="left"| A ← A & M
+|-
+| 0x54..<br/>0x55.. ||0||0||1||1||0||1||0||colspan="9"|''M''||align="left"| OR M, A    ||ZF||  ||  ||  ||align="left"| M ← M | A
+|-
+| 0x56..<br/>0x57.. ||0||0||1||1||0||1||1||colspan="9"|''M''||align="left"| OR A, M    ||ZF||  ||  ||  ||align="left"| A ← A | M
+|-
+| 0x58..<br/>0x59.. ||0||0||1||1||1||0||0||colspan="9"|''M''||align="left"| XOR M, A   ||ZF||  ||  ||  ||align="left"| M ← M ^ A
+|-
+| 0x5A..<br/>0x5B.. ||0||0||1||1||1||0||1||colspan="9"|''M''||align="left"| XOR A, M   ||ZF||  ||  ||  ||align="left"| A ← A ^ M
+|-
+| 0x5C..<br/>0x5D.. ||0||0||1||1||1||1||0||colspan="9"|''M''||align="left"| MOV M, A   ||  ||  ||  ||  ||align="left"| M ← A
+|-
+| 0x5E..<br/>0x5F.. ||0||0||1||1||1||1||1||colspan="9"|''M''||align="left"| MOV A, M   ||ZF||  ||  ||  ||align="left"| A ← M
+|-
+|colspan="23"|
+|-
+
+!        ||0||1||1||colspan="4"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| Operations with memory
+|-                
+| 0x60..<br/>0x61.. ||0||1||1||0||0||0||0||colspan="9"|''M''||align="left"| ADDC M      ||ZF||CF||AC||OV||align="left"| M ← M + CF
+|-                
+| 0x62..<br/>0x63.. ||0||1||1||0||0||0||1||colspan="9"|''M''||align="left"| SUBC M      ||ZF||CF||AC||OV||align="left"| M ← M - CF 
+|-                
+| 0x64..<br/>0x65.. ||0||1||1||0||0||1||0||colspan="9"|''M''||align="left"| IZSN M      ||ZF||CF||AC||OV||align="left"| M ← M + 1 , skip next instruction if M is 0
+|-                
+| 0x66..<br/>0x67.. ||0||1||1||0||0||1||1||colspan="9"|''M''||align="left"| DZSN M      ||ZF||CF||AC||OV||align="left"| M ← M - 1 , skip next instruction if M is 0 
+|-                
+| 0x68..<br/>0x69.. ||0||1||1||0||1||0||0||colspan="9"|''M''||align="left"| INC M       ||ZF||CF||AC||OV||align="left"| M ← M + 1 
+|-                
+| 0x6A..<br/>0x6B.. ||0||1||1||0||1||0||1||colspan="9"|''M''||align="left"| DEC M       ||ZF||CF||AC||OV||align="left"| M ← M - 1 
+|-                
+| 0x6C..<br/>0x6D.. ||0||1||1||0||1||1||0||colspan="9"|''M''||align="left"| CLEAR M     ||  ||  ||  ||  ||align="left"| M ← 0 
+|-                
+| 0x6E..<br/>0x6F.. ||0||1||1||0||1||1||1||colspan="9"|''M''||align="left"| XCH M       ||  ||  ||  ||  ||align="left"| Exchange A with M 
+|-                
+| 0x70..<br/>0x71.. ||0||1||1||1||0||0||0||colspan="9"|''M''||align="left"| NOT M       ||ZF||  ||  ||  ||align="left"| M ← ~M 
+|-                
+| 0x72..<br/>0x73.. ||0||1||1||1||0||0||1||colspan="9"|''M''||align="left"| NEG M       ||ZF||  ||  ||  ||align="left"| M ← NEG(M) 
+|-                
+| 0x73..<br/>0x75.. ||0||1||1||1||0||1||0||colspan="9"|''M''||align="left"| SR M        ||  ||CF||  ||  ||align="left"| M ← M >> 1 
+|-                
+| 0x76..<br/>0x77.. ||0||1||1||1||0||1||1||colspan="9"|''M''||align="left"| SL M        ||  ||CF||  ||  ||align="left"| M ← M << 1 
+|-                
+| 0x78..<br/>0x79.. ||0||1||1||1||1||0||0||colspan="9"|''M''||align="left"| SRC M       ||  ||CF||  ||  ||align="left"| M ← CF:M >> 1 
+|-                
+| 0x7A..<br/>0x7B.. ||0||1||1||1||1||0||1||colspan="9"|''M''||align="left"| SLC M       ||  ||CF||  ||  ||align="left"| M ← M:CF << 1 
+|-
+| 0x7C..<br/>0x7D.. ||0||1||1||1||1||1||1||colspan="9"|''M''||align="left"| SWAP M      ||  ||  ||  ||  ||align="left"| Swap the high nibble and low nibble of A 
+|-
+| 0x7E..<br/>0x7F.. ||0||1||1||1||1||1||1||colspan="9"|''M''||align="left"| DELAY M     ||  ||  ||  ||  ||align="left"| Delay M+1 cycles, at end A ← 0 
+|-
+|colspan="23"|
+|-
+
+!        ||1||0||colspan="2"|''c''|| colspan="3"|''bit pos''||colspan="9"|''9-bit MEM addr''||colspan="6"| Bit operations with memory
+|-
+| 0x8... ||1||0||0||0|| colspan="3"|''n''||colspan="9"|''M''||align="left"| T0SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if clear
+|-
+| 0x9... ||1||0||0||1|| colspan="3"|''n''||colspan="9"|''M''||align="left"| T1SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if set
+|-
+| 0xA... ||1||0||1||0|| colspan="3"|''n''||colspan="9"|''M''||align="left"| SET0 M.n    ||  ||  ||  ||  ||align="left"| Clear bit n of memory M
+|-
+| 0xB... ||1||0||1||1|| colspan="3"|''n''||colspan="9"|''M''||align="left"| SET1 M.n    ||  ||  ||  ||  ||align="left"| Set bit n of memory M
+|-
+|colspan="23"|
+|-
+
+!        ||1||1||''c''||colspan="13"|''k''||colspan="6"| Control transfers
+|-
+| 0xC000<br/>...<br/>0xDFFF ||1||1||0||colspan="13"|''k''|| align="left"| GOTO ''k'' || |||| ||  ||align="left"| Jump to k (address in words, 2 cycles)
+|-
+| 0xE000<br/>...<br/>0xFFFF ||1||1||1||colspan="13"|''k''|| align="left"| CALL ''k'' || |||| ||  ||align="left"| Call subroutine k (address in words, 2 cycles)
+|-
+|colspan="23"|
+|-
+
+|}
