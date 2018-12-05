@@ -1,11 +1,12 @@
 0x0000: 12 55 AA FF             ? marker (0xFFAA5512)
 0x0004: 01 00 00 00             ? (1) 
 0x0008: 14 00 00 00             ! version (0x14)
-0x000C: 35 F3 B6 1E             ? checksum of some sort, changes complete when code is changed in IDE
+0x000C: 35 F3 B6 1E             ! special checksum = pdk_checksum(hdr,hdrlength) + pdk_checksum(code,codesize)
 
 0x0010: 00 00 00 00             ? (0)
 0x0014: 03 00 00 00             ? (3)
-0x0018: 3F 30 00 00             ? (0x3F30)
+0x0018: 3F                      ! upper bitmask of instruction: 0x1F = 13 bit, 0x3F = 14 bit, 0x7F = 15 bit, 0x00 = 16 bit
+0x0019: 30 00 00                ? 
 0x001C: 00 00 00 00             ? (0)
 
 0x0020: 00 08 00 00             ! code size (0x800)
