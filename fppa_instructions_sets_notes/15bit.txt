@@ -1,0 +1,113 @@
+Reference: http://www.eevblog.com/forum/blog/eevblog-1144-padauk-programmer-reverse-engineering/msg2010413/#msg2010413
+Thanks to user oPossum
+
+0x0000  000_0000_0000_0000  nop
+0x0001  000_0000_0000_0001
+0x0002  000_0000_0000_001-
+0x0004  000_0000_0000_01--
+0x0008  000_0000_0000_1---
+0x0010  000_0000_0001_----
+0x0020  000_0000_001-_----
+0x0040  000_0000_010-_----
+0x0050  000_0000_0101_----
+0x0060  000_0000_0110_0000  addc     a
+0x0061  000_0000_0110_0001  subc     a
+0x0062  000_0000_0110_0010  izsn     a
+0x0063  000_0000_0110_0011  dzsn     a
+0x0064  000_0000_0110_0100
+0x0065  000_0000_0110_0101
+0x0066  000_0000_0110_0110
+0x0067  000_0000_0110_0111  pcadd    a
+0x0068  000_0000_0110_1000  not      a
+0x0069  000_0000_0110_1001  neg      a
+0x006A  000_0000_0110_1010  sr       a
+0x006B  000_0000_0110_1011  sl       a
+0x006C  000_0000_0110_1100  src      a
+0x006D  000_0000_0110_1101  slc      a
+0x006E  000_0000_0110_1110  swap     a
+0x006F  000_0000_0110_1111
+0x0070  000_0000_0111_0000  wdreset
+0x0071  000_0000_0111_0001
+0x0072  000_0000_0111_0010  pushaf
+0x0073  000_0000_0111_0011  popaf
+0x0074  000_0000_0111_0100
+0x0075  000_0000_0111_0101  reset
+0x0076  000_0000_0111_0110  stopsys
+0x0077  000_0000_0111_0111  stopexe
+0x0078  000_0000_0111_1000  engint
+0x0079  000_0000_0111_1001  disgint
+0x007A  000_0000_0111_1010  ret
+0x007B  000_0000_0111_1011  reti
+0x007C  000_0000_0111_1100  mul
+0x007D  000_0000_0111_1101
+0x007E  000_0000_0111_1110
+0x007F  000_0000_0111_1110
+0x0080  000_0000_1ppp_pppp  xor      a,IO
+0x0100  000_0001_0ppp_pppp  mov      IO,a
+0x0180  000_0001_1ppp_pppp  mov      a,IO
+0x0200  000_0010_kkkk_kkkk  ret      I
+0x0300  000_0011_----_----
+0x0400  000_0100_----_----
+0x0500  000_0101_wwww_www0  ldtabl   word
+0x0501  000_0101_wwww_www1  ldtabh   word
+0x0600  000_0110_wwww_www0  stt16    word
+0x0601  000_0110_wwww_www1  ldt16    word
+0x0700  000_0111_wwww_www0  idxm     index,a
+0x0701  000_0111_wwww_www1  idxm     a,index
+0x0800  000_10--_----_----
+0x0C00  000_1100_mmmm_mmmm  comp     a,M
+0x0D00  000_1101_mmmm_mmmm  comp     M,a
+0x0E00  000_1110_mmmm_mmmm  nadd     a,M
+0x0F00  000_1111_mmmm_mmmm  nadd     M,a
+0x1000  001_0000_mmmm_mmmm  add      M,a
+0x1100  001_0001_mmmm_mmmm  sub      M,a
+0x1200  001_0010_mmmm_mmmm  addc     M,a
+0x1300  001_0011_mmmm_mmmm  subc     M,a
+0x1400  001_0100_mmmm_mmmm  and      M,a
+0x1500  001_0101_mmmm_mmmm  or       M,a
+0x1600  001_0110_mmmm_mmmm  xor      M,a
+0x1700  001_0111_mmmm_mmmm  mov      M,a
+0x1800  001_1000_mmmm_mmmm  add      a,M
+0x1900  001_1001_mmmm_mmmm  sub      a,M
+0x1A00  001_1010_mmmm_mmmm  addc     a,M
+0x1B00  001_1011_mmmm_mmmm  subc     a,M
+0x1C00  001_1100_mmmm_mmmm  and      a,M
+0x1D00  001_1101_mmmm_mmmm  or       a,M
+0x1E00  001_1110_mmmm_mmmm  xor      a,M
+0x1F00  001_1111_mmmm_mmmm  mov      a,M
+0x2000  010_0000_mmmm_mmmm  addc     M
+0x2100  010_0001_mmmm_mmmm  subc     M
+0x2200  010_0010_mmmm_mmmm  izsn     M
+0x2300  010_0011_mmmm_mmmm  dzsn     M
+0x2400  010_0100_mmmm_mmmm  inc      M
+0x2500  010_0101_mmmm_mmmm  dec      M
+0x2600  010_0110_mmmm_mmmm  clear    M
+0x2700  010_0111_mmmm_mmmm  xch      M
+0x2800  010_1000_mmmm_mmmm  not      M
+0x2900  010_1001_mmmm_mmmm  neg      M
+0x2A00  010_1010_mmmm_mmmm  sr       M
+0x2B00  010_1011_mmmm_mmmm  sl       M
+0x2C00  010_1100_mmmm_mmmm  src      M
+0x2D00  010_1101_mmmm_mmmm  slc      M
+0x2E00  010_1110_mmmm_mmmm  ceqsn    a,M
+0x2F00  010_1111_mmmm_mmmm  cneqsn   a,M
+0x3000  011_00bb_bppp_pppp  t0sn     IO.n
+0x3400  011_01bb_bppp_pppp  t1sn     IO.n
+0x3800  011_10bb_bppp_pppp  set0     IO.n
+0x3C00  011_11bb_bppp_pppp  set1     IO.n
+0x4000  100_00bb_bmmm_mmmm  t0sn     M.n
+0x4400  100_01bb_bmmm_mmmm  t1sn     M.n
+0x4800  100_10bb_bmmm_mmmm  set0     M.n
+0x4C00  100_11bb_bmmm_mmmm  set1     M.n
+0x5000  101_0000_kkkk_kkkk  add      a,I
+0x5100  101_0001_kkkk_kkkk  sub      a,I
+0x5200  101_0010_kkkk_kkkk  ceqsn    a,I
+0x5300  101_0011_kkkk_kkkk  cneqsn   a,I
+0x5400  101_0100_kkkk_kkkk  and      a,I
+0x5500  101_0101_kkkk_kkkk  or       a,I
+0x5600  101_0110_kkkk_kkkk  xor      a,I
+0x5700  101_0111_kkkk_kkkk  mov      a,I
+0x5800  101_10--_----_----
+0x5C00  101_11bb_bppp_pppp  swapc    IO.n
+0x6000  110_aaaa_aaaa_aaaa  goto     label
+0x7000  111_aaaa_aaaa_aaaa  call     label
