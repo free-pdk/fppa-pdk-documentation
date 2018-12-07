@@ -31,7 +31,7 @@ WORD BASED OFFSET: LAST 16 WORDS:
        ==> 6 nibbles: 0x2DB4 0xA50F
        ==> mask with: 0xFF3F 0xFF3F
        ==> ------------------------
-       ==> result:    0x2D34 0xA50F (as shown in IDE)
+       ==> result:    0x2D34 0xA50F (as shown in IDE: 0xA5342D)
        ==>
        ==> 2 code words: 0x2D34 0xA5??  (last byte unknown)
 
