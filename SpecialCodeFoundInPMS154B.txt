@@ -1,0 +1,30 @@
+SPECIAL PMS154B:
+
+- some code is inserted @0x7E8
+- there is NOP at start of codemem (@0x000), seems it might be a GOTO 0x7E8 and WRITER will NOP it by changing OTP bits to all 0 later
+- the code seems to init the IC and outputs:
+  PA OUTPUT WHEN PA.5 = HIGH     LOW 
+                         PA.7=1   PA.7=0   (CONFIGURED AS INPUT)
+                         PA.6=1   PA.6=0   (CONFIGURED AS INPUT)
+                         PA.5=0   PA.5=0   (CONFIGURED AS INPUT)
+                         PA.4=0   PA.4=1   (CONFIGURED AS OUTPUT)
+                         PA.3=0   PA.3=1   (CONFIGURED AS OUTPUT)
+                         PA.2=0   PA.2=1   (CONFIGURED AS OUTPUT)
+                         PA.1=1   PA.1=0   (CONFIGURED AS INPUT)
+                         PA.0=1   PA-0=0   (CONFIGURED AS INPUT)
+  => PA.4,PA.3,PA.2 is inverted from input signal on PA.5
+  
+0x07e8:   0x2f1c    MOV A, 0x1C
+0x07e9:   0x018b    MOV IO(0x0B), A  ;IHRCR
+0x07ea:   0x0183    MOV IO(0x03), A  ;CLKMD
+0x07eb:   0x0191    MOV IO(0x11), A  ;PAC
+0x07ec:   0x1950    T0SN IO(0x10).5  ;PA.5
+0x07ed:   0x2fc3    MOV A, 0xC3
+0x07ee:   0x0190    MOV IO(0x10), A  ;PA
+0x07ef:   0x37e8    GOTO 0x7E8
+
+
+BIG GUESS: 
+==> Maybe this is factory test code already in OTP when chip is sold?
+==> Maybe this is initial small code written to IC for check if operational
+==> WRITER could detect presence of IC by setting PA.5 High/Low and checking if PA.4,PA.3,PA.2 output inverted signal
