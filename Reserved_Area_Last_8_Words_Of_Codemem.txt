@@ -8,7 +8,7 @@ PDK-DATA last 32 bytes:
 0000ff0: 00 00 00 00 ff 3f ff 3f ff 3f ff 3f ff 3f 51 11
 
 
-Dump from PMC154B last 32 bytes:
+Dump from PMS154B last 32 bytes:
 
 0000fe0: ff 3f ff 3f ff 3f ff 3f ff 3f ff 3f 5a 02 ff 3f
 0000ff0: 2d 34 a5 3e ff 3f ff 3f ff 3f ff 3f 48 02 51 11
