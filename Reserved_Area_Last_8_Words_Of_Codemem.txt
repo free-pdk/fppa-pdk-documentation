@@ -1,0 +1,66 @@
+Example from PMC154B:
+
+see also "Last8W.html" in IDE help
+
+PDK-DATA last 32 bytes:
+
+0000fe0: ff 3f ff 3f ff 3f ff 3f ff 3f ff 3f ff 3f ff 3f
+0000ff0: 00 00 00 00 ff 3f ff 3f ff 3f ff 3f ff 3f 51 11
+
+
+Dump from PMC154B last 32 bytes:
+
+0000fe0: ff 3f ff 3f ff 3f ff 3f ff 3f ff 3f 5a 02 ff 3f
+0000ff0: 2d 34 a5 3e ff 3f ff 3f ff 3f ff 3f 48 02 51 11
+
+---
+
+WORD BASED OFFSET: LAST 16 WORDS:
+
+@07F0: ???
+@07F1: ???
+@07F2: ???
+@07F3: ???
+@07F4: ???
+@07F5: ???
+@07F6: BGTR value, filled by WRITER, implemented as "RET 0xXX"
+@07F7: ???
+
+@07F8: CHECKSUM of codemem, 6 nibbles (3 byte) stored in 2 code words (using code bits only) XX XX  XX ??
+       ==> checksum of codemem was 0x2DB4A50F
+       ==> 6 nibbles: 0x2DB4 0xA50F
+       ==> mask with: 0xFF3F 0xFF3F
+       ==> ------------------------
+       ==> result:    0x2D34 0xA50F (as shown in IDE)
+       ==>
+       ==> 2 code words: 0x2D34 0xA5??  (last byte unknown)
+
+@07FA: ROLLING CODE 1, implemented as "RET 0xXX"
+@07FB: ROLLING CODE 2, implemented as "RET 0xXX"
+@07FC: ROLLING CODE 3, implemented as "RET 0xXX"
+@07FD: ROLLING CODE 4, implemented as "RET 0xXX"
+
+@07FE: IHRCR value, written after calibration (done by WRITER), implemented as "RET 0xXX"
+
+@07FF: CodeOption, filled by IDE, (SECURITY bit, LVD, ...):
+       ==> BIT 0: Security  1 = On / 0 = Off
+       
+       ==> BIT 1: ?
+       
+       ==> BIT 2: LVD: 000 = 4,0V / 001 = 3,5V / 010 = 3,0V / 011 = 2,75V
+       ==> BIT 3: LVD: 100 = 2,5V / 101 = 2,2V / 110 = 2,0V / 111 = 1,8V
+       ==> BIT 4: LVD:
+       
+       ==> BIT 5: ?
+       ==> BIT 6: ?
+       ==> BIT 7: ?
+       
+       ==> BIT 8: Drive  1 = High / 0 = Low
+       
+       ==> BIT 9: ?
+       
+       ==> BIT10: FAST BOOT: 00 = SLOW
+       ==> BIT11: FAST BOOT: 11 = FAST
+       
+       ==> BIT12: ?
+       ==> BIT13: ?
