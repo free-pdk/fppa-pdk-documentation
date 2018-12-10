@@ -1,0 +1,23 @@
+
+PMS154B
+-------
+
+WRITER:
+
+PRESENCE-CHECK of IC (automatically executed every second by programer):
+ - required pins connected: VDD,GND,PA.3,PA.4
+ - NOTE: before checking all pins are tested for shortcuts 
+   -> Do not connect GND pin of programer socket to osciloscope, use GND from programer board instead!
+  - uses fixed low voltage (3.3V) for VDD only
+
+BLANK-CHECK (IDE button):
+ - required pins connected: VDD,GND,PA.3,PA.4,PA.5,PA.6
+ - different voltage levels (max. 4.6V on VDD)
+ - apx. 1 second activity
+
+VERIFY (IDE button):
+ - required pins connected: VDD,GND,PA.3,PA.4,PA.5,PA.6
+ - different voltage levels (max. 4.6V on VDD)
+ - apx. 1 second activity
+
+--> Logic-Analyzer can be used to capture presence check, blank check and verify of PMS154B.
