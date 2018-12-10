@@ -51,6 +51,8 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 |colspan="23"|
 |-
+!        ||0||0||0||0||0||0||0||0||0||0||1||1||colspan="4"|''opcode''||colspan="6"|Miscellaneous instructions
+|-
 | 0x0030 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||0||0||align="left"| WDRESET ||  ||  ||  ||  ||align="left"| Reset Watchdog timer
 |-                  
 | 0x0031 ||0||0||0||0||0||0||0||0||0||0||1||1||0||0||0||1||colspan="6"| ''?''
@@ -85,6 +87,8 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 |colspan="23"|
 |-
+!    ||0||0||0||0||0||0||0||0||0||1||colspan="6"| ||colspan="6"|Miscellaneous instructions
+|-
 | 0x004.<br/>0x005. ||0||0||0||0||0||0||0||0||0||1||0||k||k||k||k||k||align="left"| PMODE k   ||  ||  ||  ||  ||align="left"| Set PMODE k
 |-
 | 0x0060 ||0||0||0||0||0||0||0||0||0||1||1||0||n||n||n||n||align="left"| POPWPC n  ||  ||  ||  ||  ||align="left"| Pop word PC(core n) from stack
@@ -94,7 +98,7 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |colspan="23"|
 |-
 
-!        ||0||0||0||0||0||0||0||colspan="3"|''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
+!        ||0||0||0||0||0||0||0||0||colspan="2"|''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
 |-
 | 0x008.<br/>...<br/>0x00B. ||0||0||0||0||0||0||0||0||1||0||colspan="6"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
 |-
@@ -197,7 +201,7 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |colspan="23"|
 |-
 
-!        ||0||colspan="6"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| Operations with A and memory
+!        ||0||0||colspan="5"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| Operations with A and memory
 |-
 | 0x30..<br/>0x31.. ||0||0||1||1||0||0||0||colspan="9"|''M''||align="left"| NMOV A, M   ||ZF||  ||  ||  ||align="left"| A ← NEG(M)
 |-
@@ -211,9 +215,9 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 | 0x3A..<br/>0x3B.. ||0||0||1||1||1||0||1||colspan="9"|''M''||align="left"| CEQSN M, A  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A is equal to M (flags changed according to (M-A))
 |-
-| 0x3C..<br/>0x3D.. ||0||0||0||1||1||0||0||colspan="9"|''M''||align="left"| COMP A, M   ||ZF||CF||AC||OV||align="left"| Compare A with M (flags changed according to (A-M))
+| 0x3C..<br/>0x3D.. ||0||0||1||1||1||1||0||colspan="9"|''M''||align="left"| COMP A, M   ||ZF||CF||AC||OV||align="left"| Compare A with M (flags changed according to (A-M))
 |-
-| 0x3E..<br/>0x3F.. ||0||0||0||1||1||0||1||colspan="9"|''M''||align="left"| COMP M, A   ||ZF||CF||AC||OV||align="left"| Compare M with A (flags changed according to (M-A))
+| 0x3E..<br/>0x3F.. ||0||0||1||1||1||1||1||colspan="9"|''M''||align="left"| COMP M, A   ||ZF||CF||AC||OV||align="left"| Compare M with A (flags changed according to (M-A))
 |-
 | 0x40..<br/>0x41.. ||0||0||1||0||0||0||0||colspan="9"|''M''||align="left"| ADD M, A   ||ZF||CF||AC||OV||align="left"| M ← M + A
 |-
