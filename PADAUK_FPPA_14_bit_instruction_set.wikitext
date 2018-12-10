@@ -102,7 +102,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |colspan="21"|
 |-
 
-!        ||0||0||colspan="5"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| 16 bit memory operations
+!        ||0||0||0||0||1||1||''c''|| colspan="6"|''7-bit MEM addr''||''c''||colspan="6"| 16 bit memory operations
 |-
 | 0x03.. ||0||0||0||0||1||1||0||colspan="6"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
 |-
@@ -167,7 +167,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 |colspan="21"|
 |-
 
-!        ||0||1||colspan="5"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| Operations with memory
+!        ||0||1||0||colspan="4"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| Operations with memory
 |-
 | 0x10.. ||0||1||0||0||0||0||0||colspan="7"|''M''||align="left"| ADDC M      ||ZF||CF||AC||OV||align="left"| M ← M + CF
 |-
@@ -259,19 +259,6 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 | 0x3800<br/>...<br/>0x3FFF ||1||1||1||colspan="11"|''k''|| align="left"| CALL ''k'' || |||| ||  ||align="left"| Call subroutine k (address in words, 2 cycles)
 |-
 |colspan="21"|
-|-
-
-!        ||colspan="14"| ||colspan="6"|''UNKNOWN''
-|-
-| 0x0001<br/>...<br/>0x005F ||0||0||0||0||0||0||0||*||colspan="6"|*||colspan="6"|''?''
-|-
-| 0x0080<br/>...<br/>0x00BF ||0||0||0||0||0||0||1||0||colspan="6"|*||colspan="6"|''?''
-|-
-| 0x0100<br/>...<br/>0x017F ||0||0||0||0||0||1||0||colspan="7"|*||colspan="6"|''?''
-|-
-| 0x0E00<br/>...<br/>0x0EFF ||0||0||1||1||1||0||colspan="8"|*||colspan="6"|''?''
-|-
-| 0x0F00<br/>...<br/>0x0F7F ||0||0||1||1||1||1||0||colspan="7"|*||colspan="6"|''?''
 |-
 
 
