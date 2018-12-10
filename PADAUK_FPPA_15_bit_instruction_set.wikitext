@@ -253,7 +253,7 @@ These devices feature a 15-bit wide code memory. Byte order is little endian.
 
 !        ||1||0||1||1||1|| colspan="3"|''bit pos''||colspan="7"|''7-bit IO addr''||colspan="6"| Special operation with CF and IO
 |-
-| 0x5C00<br/>...<br/>0x05FF ||1||0||1||1||1|| colspan="3"|''n''||colspan="7"|''IO''||align="left"| SWAPC IO.n ||  ||CF||  ||  ||align="left"| Swap bit IO.n with CF
+| 0x5C00<br/>...<br/>0x5FFF ||1||0||1||1||1|| colspan="3"|''n''||colspan="7"|''IO''||align="left"| SWAPC IO.n ||  ||CF||  ||  ||align="left"| Swap bit IO.n with CF
 |-
 |colspan="22"|
 |-
