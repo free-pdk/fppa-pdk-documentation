@@ -1,4 +1,4 @@
-Example from PMC154B:
+Example from PMC154B/PFS154:
 
 see also "Last8W.html" in IDE help
 
@@ -17,8 +17,8 @@ Dump from PMS154B last 32 bytes:
 
 WORD BASED OFFSET: LAST 16 WORDS:
 
-@07F0: ???
-@07F1: ???
+@07F0: ERASE-COUNT-A (PFS154) WRITER will increase this value after every erase
+@07F1: ERASE-COUNT-B (PFS154) this seems to be a copy of ERASE-COUNT-A (additional write)
 @07F2: ???
 @07F3: ???
 @07F4: ???
