@@ -274,7 +274,9 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 ! Device || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO
 |-
 | PFS173  || - || - || - || - || -
+|-
 | PMC133  || Y || Y || Y || Y || Y
+|-
 | PMS134  || Y || Y || Y || Y || Y
 |-
 |}
