@@ -1,5 +1,5 @@
 ==PADAUK FPPA core devices (16 bit)==
-These devices feature a 16-bit wide code memory. Byte order is little endian.
+These devices feature a 16-bit wide code memory. Byte order is little endian. The instruction set is called SYM_83A in Padauk include files. The SDCC backend will be called pdk16.
 
 {|class="wikitable" style="text-align:center"
 |+ 16-bit FPPA instruction set
@@ -89,11 +89,11 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 !    ||0||0||0||0||0||0||0||0||0||1||colspan="6"| ||colspan="6"|Miscellaneous instructions
 |-
-| 0x004.<br/>0x005. ||0||0||0||0||0||0||0||0||0||1||0||k||k||k||k||k||align="left"| PMODE k   ||  ||  ||  ||  ||align="left"| Set PMODE k
+| 0x004.<br/>0x005. ||0||0||0||0||0||0||0||0||0||1||0||k||k||k||k||k||align="left"| PMODE k   ||  ||  ||  ||  ||align="left"| Set PMODE k (if available)
 |-
-| 0x0060 ||0||0||0||0||0||0||0||0||0||1||1||0||n||n||n||n||align="left"| POPWPC n  ||  ||  ||  ||  ||align="left"| Pop word PC(core n) from stack
+| 0x0060 ||0||0||0||0||0||0||0||0||0||1||1||0||n||n||n||n||align="left"| POPWPC n  ||  ||  ||  ||  ||align="left"| Pop word PC(core n) from stack (if available)
 |-
-| 0x0070 ||0||0||0||0||0||0||0||0||0||1||1||1||n||n||n||n||align="left"| PUSHWPC n ||  ||  ||  ||  ||align="left"| Push word PC(core n) to stack
+| 0x0070 ||0||0||0||0||0||0||0||0||0||1||1||1||n||n||n||n||align="left"| PUSHWPC n ||  ||  ||  ||  ||align="left"| Push word PC(core n) to stack (if available)
 |-
 |colspan="23"|
 |-
@@ -113,9 +113,9 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 | 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
 |-
-| 0x04..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||0||align="left"| POPW M    ||  ||  ||  ||  ||align="left"| Pop word from stack to memory M (last bit of M set to 0, M must be word aligned)
+| 0x04..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||0||align="left"| POPW M    ||  ||  ||  ||  ||align="left"| Pop word from stack to memory M (last bit of M set to 0, M must be word aligned) (if available)
 |-
-| 0x05..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||1||align="left"| PUSHW M   ||  ||  ||  ||  ||align="left"| Push word from memory M to stack (last bit of M set to 1, M must be word aligned)
+| 0x05..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||1||align="left"| PUSHW M   ||  ||  ||  ||  ||align="left"| Push word from memory M to stack (last bit of M set to 1, M must be word aligned) (if available)
 |-
 | 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||0||align="left"| IGOTO M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 0, M must be word aligned)
 |-
@@ -314,3 +314,20 @@ These devices feature a 16-bit wide code memory. Byte order is little endian.
 |-
 
 |}
+
+{|class="wikitable" style="text-align:center"
+|+ Instruction support by device
+! Device || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
+|-
+| MCS11  || Y || Y || Y || Y || Y || Y
+| PMC232 || - || - || - || - || - || -
+| PMC234 || - || - || - || - || - || -
+| PMC251 || - || - || - || - || - || -
+| PMC271 || - || - || - || - || - || -
+| PMC884 || Y || Y || Y || Y || Y || Y
+| PMS232 || - || - || - || - || - || -
+| PMS234 || - || - || - || - || - || -
+| PMS271 || - || - || - || - || - || -
+|-
+|}
+

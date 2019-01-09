@@ -1,5 +1,5 @@
 ==PADAUK FPPA core devices (14 bit)==
-These devices feature a 14-bit wide code memory. Byte order is little endian.
+These devices feature a 14-bit wide code memory. Byte order is little endian. The instruction set is called SYM_85A in Padauk include files. The SDCC backend is called pdk14.
 
 {|class="wikitable" style="text-align:center"
 |+ 14-bit FPPA instruction set
@@ -86,7 +86,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 
 !        ||0||0||0||0||0||colspan="3"|''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
 |-
-| 0x00C.<br/>0x00D.<br/>0x00E.<br/>0x00F. ||0||0||0||0||0||0||1||1||colspan="6"|''IO''||align="left"| XOR IO, A ||  ||  ||  ||  ||align="left"| IO ← IO ^ A
+| 0x00C.<br/>0x00D.<br/>0x00E.<br/>0x00F. ||0||0||0||0||0||0||1||1||colspan="6"|''IO''||align="left"| XOR IO, A ||  ||  ||  ||  ||align="left"| IO ← IO ^ A (if available)
 |-
 | 0x01.. ||0||0||0||0||0||1||1||0||colspan="6"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
 |-
@@ -124,13 +124,13 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 
 !        ||0||0||colspan="5"|''opcode''|| colspan="7"|''7-bit MEM addr''||colspan="6"| Operations with A and memory
 |-
-| 0x06.. ||0||0||0||1||1||0||0||colspan="7"|''M''||align="left"| COMP A, M  ||ZF||CF||AC||OV||align="left"| Compare A with M (flags changed according to (A-M))
+| 0x06.. ||0||0||0||1||1||0||0||colspan="7"|''M''||align="left"| COMP A, M  ||ZF||CF||AC||OV||align="left"| Compare A with M (flags changed according to (A-M)) (if available)
 |-
-| 0x06.. ||0||0||0||1||1||0||1||colspan="7"|''M''||align="left"| COMP M, A  ||ZF||CF||AC||OV||align="left"| Compare M with A (flags changed according to (M-A))
+| 0x06.. ||0||0||0||1||1||0||1||colspan="7"|''M''||align="left"| COMP M, A  ||ZF||CF||AC||OV||align="left"| Compare M with A (flags changed according to (M-A)) (if available)
 |-
-| 0x07.. ||0||0||0||1||1||1||0||colspan="7"|''M''||align="left"| NADD A, M  ||ZF||CF||AC||OV||align="left"| A ← M + NEG(A)
+| 0x07.. ||0||0||0||1||1||1||0||colspan="7"|''M''||align="left"| NADD A, M  ||ZF||CF||AC||OV||align="left"| A ← M + NEG(A) (if available)
 |-
-| 0x07.. ||0||0||0||1||1||1||1||colspan="7"|''M''||align="left"| NADD M, A  ||ZF||CF||AC||OV||align="left"| M ← NEG(M) + A
+| 0x07.. ||0||0||0||1||1||1||1||colspan="7"|''M''||align="left"| NADD M, A  ||ZF||CF||AC||OV||align="left"| M ← NEG(M) + A (if available)
 |-
 | 0x08.. ||0||0||1||0||0||0||0||colspan="7"|''M''||align="left"| ADD M, A   ||ZF||CF||AC||OV||align="left"| M ← M + A
 |-
@@ -263,3 +263,21 @@ These devices feature a 14-bit wide code memory. Byte order is little endian.
 
 
 |}
+
+
+{|class="wikitable" style="text-align:center"
+|+ Instruction support by device
+! Device || COMP A, M || COMP M, A || MUL || NADD A, M || NADD M, A || XOR IO, A
+|-
+| PFS154  || - || - || - || - || - || Y
+| PMC131  || Y || Y || Y || Y || Y || -
+| PMS130  || Y || Y || Y || Y || Y || -
+| PMS131  || Y || Y || Y || Y || Y || -
+| PMS132  || Y || Y || Y || Y || Y || Y
+| PMS152  || Y || Y || - || Y || Y || Y
+| PMS154B || Y || Y || - || Y || Y || Y
+| PMS154C || Y || Y || - || Y || Y || Y
+| PMS171B || - || - || - || - || - || Y
+|-
+|}
+
