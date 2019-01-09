@@ -274,6 +274,7 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 | PMS130  || Y || Y || Y || Y || Y || -
 | PMS131  || Y || Y || Y || Y || Y || -
 | PMS132  || Y || Y || Y || Y || Y || Y
+| PMS132B || Y || Y || Y || Y || Y || Y
 | PMS152  || Y || Y || - || Y || Y || Y
 | PMS154B || Y || Y || - || Y || Y || Y
 | PMS154C || Y || Y || - || Y || Y || Y
