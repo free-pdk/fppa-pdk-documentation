@@ -55,9 +55,9 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x0031 ||0||0||0||0||0||0||0||1||1||0||0||0||1||colspan="6"| ''?''
 |-
-| 0x0032 ||0||0||0||0||0||0||0||1||1||0||0||1||0||align="left"| PUSHAF  ||  ||  ||  ||  ||align="left"| Push A and flags to stack
+| 0x0032 ||0||0||0||0||0||0||0||1||1||0||0||1||0||align="left"| PUSHAF  ||  ||  ||  ||  ||align="left"| Push A and flags to stack: [SP] ← A, [SP + 1] ← F, SP ← SP + 2
 |-
-| 0x0033 ||0||0||0||0||0||0||0||1||1||0||0||1||1||align="left"| POPAF   ||ZF||CF||AC||OV||align="left"| Pop A and flags from stack
+| 0x0033 ||0||0||0||0||0||0||0||1||1||0||0||1||1||align="left"| POPAF   ||ZF||CF||AC||OV||align="left"| Pop A and flags from stack: SP ← SP + 2, F ← [SP + 1], [SP] ← A
 |-
 | 0x0034 ||0||0||0||0||0||0||0||1||1||0||1||0||0||colspan="6"| ''?''
 |-
