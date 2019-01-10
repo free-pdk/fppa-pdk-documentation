@@ -270,14 +270,23 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 ! Device || COMP A, M || COMP M, A || MUL || NADD A, M || NADD M, A || XOR IO, A
 |-
 | PFS154  || - || - || - || - || - || Y
+|-
 | PMC131  || Y || Y || Y || Y || Y || -
+|-
 | PMS130  || Y || Y || Y || Y || Y || -
+|-
 | PMS131  || Y || Y || Y || Y || Y || -
+|-
 | PMS132  || Y || Y || Y || Y || Y || Y
+|-
 | PMS132B || Y || Y || Y || Y || Y || Y
+|-
 | PMS152  || Y || Y || - || Y || Y || Y
+|-
 | PMS154B || Y || Y || - || Y || Y || Y
+|-
 | PMS154C || Y || Y || - || Y || Y || Y
+|-
 | PMS171B || - || - || - || - || - || Y
 |-
 |}

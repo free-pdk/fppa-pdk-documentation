@@ -320,13 +320,21 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 ! Device || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
 |-
 | MCS11  || Y || Y || Y || Y || Y || Y
+|-
 | PMC232 || - || - || - || - || - || -
+|-
 | PMC234 || - || - || - || - || - || -
+|-
 | PMC251 || - || - || - || - || - || -
+|-
 | PMC271 || - || - || - || - || - || -
+|-
 | PMC884 || Y || Y || Y || Y || Y || Y
+|-
 | PMS232 || - || - || - || - || - || -
+|-
 | PMS234 || - || - || - || - || - || -
+|-
 | PMS271 || - || - || - || - || - || -
 |-
 |}
