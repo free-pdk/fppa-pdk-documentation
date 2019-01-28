@@ -319,6 +319,8 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 |+ Instruction support by device
 ! Device || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
 |-
+| DF69  || Y || Y || Y || Y || Y || Y
+|-
 | MCS11  || Y || Y || Y || Y || Y || Y
 |-
 | PMC232 || - || - || - || - || - || -
