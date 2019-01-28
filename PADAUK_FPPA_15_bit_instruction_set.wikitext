@@ -275,7 +275,7 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |-
 | PFS173  || - || - || - || - || -
 |-
-| PMC133  || Y || Y || Y || Y || Y
+| PMS133  || Y || Y || Y || Y || Y
 |-
 | PMS134  || Y || Y || Y || Y || Y
 |-
