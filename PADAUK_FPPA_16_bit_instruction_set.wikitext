@@ -109,9 +109,9 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 
 !        ||0||0||0||0||colspan="3"|''opcode''|| colspan="9"|''9-bit MEM addr''||colspan="6"| 16 bit memory operations
 |-
-| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
+| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 0, M must be word aligned)
 |-
-| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
+| 0x02..<br/>0x03.. ||0||0||0||0||0||0||1||colspan="8"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 1, M must be word aligned)
 |-
 | 0x04..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||0||align="left"| POPW M    ||  ||  ||  ||  ||align="left"| Pop word from stack to memory M (last bit of M set to 0, M must be word aligned) (if available)
 |-
