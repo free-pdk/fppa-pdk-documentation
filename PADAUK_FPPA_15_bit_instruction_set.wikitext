@@ -108,9 +108,9 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x05.. ||0||0||0||0||1||0||1||colspan="7"|''M''||1||align="left"| LDTABH M  ||  ||  ||  ||  ||align="left"| A ← HighByte@CodeMem(M) (last bit of M set to 1, M must be word aligned), 2 cycles.<br/>The top nibble at M is ignored, resulting in a 12-bit address.<br/>If the 12-bit address does not point to a valid address, the behaviour is undefined.
 |-
-| 0x06.. ||0||0||0||0||1||1||0||colspan="7"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
+| 0x06.. ||0||0||0||0||1||1||0||colspan="7"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 0, M must be word aligned)
 |-
-| 0x06.. ||0||0||0||0||1||1||0||colspan="7"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
+| 0x06.. ||0||0||0||0||1||1||0||colspan="7"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 1, M must be word aligned)
 |-
 | 0x07.. ||0||0||0||0||1||1||1||colspan="7"|''M''||0||align="left"| IDXM M, A ||  ||  ||  ||  ||align="left"| [M] ← A (last bit of M set to 0, M must be word aligned, 2 cycles)
 |-
