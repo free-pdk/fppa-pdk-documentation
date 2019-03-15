@@ -104,9 +104,9 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 
 !        ||0||0||0||0||1||1||''c''|| colspan="6"|''7-bit MEM addr''||''c''||colspan="6"| 16 bit memory operations
 |-
-| 0x03.. ||0||0||0||0||1||1||0||colspan="6"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
+| 0x03.. ||0||0||0||0||1||1||0||colspan="6"|''M''||0||align="left"| STT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
 |-
-| 0x03.. ||0||0||0||0||1||1||0||colspan="6"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| Timer16 ← M (last bit of M set to 1, M must be word aligned)
+| 0x03.. ||0||0||0||0||1||1||0||colspan="6"|''M''||1||align="left"| LDT16 M   ||  ||  ||  ||  ||align="left"| M ← Timer16 (last bit of M set to 0, M must be word aligned)
 |-
 | 0x03.. ||0||0||0||0||1||1||1||colspan="6"|''M''||0||align="left"| IDXM M, A ||  ||  ||  ||  ||align="left"| [M] ← A (last bit of M set to 0, M must be word aligned, 2 cycles)
 |-
