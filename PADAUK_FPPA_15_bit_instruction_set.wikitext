@@ -84,13 +84,13 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |colspan="22"|
 |-
 
-!        ||0||0||0||0||0||0||0||colspan="2"|''c''|| colspan="6"|''6-bit IO addr''||colspan="6"| Operations with A and IO
+!        ||0||0||0||0||0||0||colspan="2"|''c''|| colspan="7"|''7-bit IO addr''||colspan="6"| Operations with A and IO
 |-
-| 0x0080<br/>...<br/>0x00FF  ||0||0||0||0||0||0||0||0||1||colspan="6"|''IO''||align="left"| XOR IO, A ||  ||  ||  ||  ||align="left"| IO ← IO ^ A
+| 0x0080<br/>...<br/>0x00FF  ||0||0||0||0||0||0||0||1||colspan="7"|''IO''||align="left"| XOR IO, A ||  ||  ||  ||  ||align="left"| IO ← IO ^ A
 |-
-| 0x0100<br/>...<br/>0x017F  ||0||0||0||0||0||0||0||1||0||colspan="6"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
+| 0x0100<br/>...<br/>0x017F  ||0||0||0||0||0||0||1||0||colspan="7"|''IO''||align="left"| MOV IO, A ||  ||  ||  ||  ||align="left"| IO ← A
 |-
-| 0x0180<br/>...<br/>0x01FF  ||0||0||0||0||0||0||0||1||1||colspan="6"|''IO''||align="left"| MOV A, IO ||ZF||  ||  ||  ||align="left"| A ← IO
+| 0x0180<br/>...<br/>0x01FF  ||0||0||0||0||0||0||1||1||colspan="7"|''IO''||align="left"| MOV A, IO ||ZF||  ||  ||  ||align="left"| A ← IO
 |-
 |colspan="22"|
 |-
