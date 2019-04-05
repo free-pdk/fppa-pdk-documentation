@@ -9,10 +9,6 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x0000 ||0||0||0||0||0||0||0||0||0||0||0||0||0||0||0||0||align="left"| NOP     ||  ||  ||  ||  ||align="left"| No operation
 |-
-| 0x0006 ||0||0||0||0||0||0||0||0||0||0||0||0||0||1||1||0||align="left"| ?LDSPTL  ||  ||  ||  ||  ||align="left"| A ← LowByte@CodeMem(WORD[SP])
-|-
-| 0x0007 ||0||0||0||0||0||0||0||0||0||0||0||0||0||1||1||1||align="left"| ?LDSPTH  ||  ||  ||  ||  ||align="left"| A ← HighByteB@Codemem(WORD[SP])
-|-
 |colspan="23"|
 |-
 !        ||0||0||0||0||0||0||0||0||0||0||0||1||colspan="4"|''opcode''||colspan="6"|Miscellaneous instructions
