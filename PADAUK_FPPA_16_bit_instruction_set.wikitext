@@ -280,7 +280,7 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 |-                
 | 0x7A..<br/>0x7B.. ||0||1||1||1||1||0||1||colspan="9"|''M''||align="left"| SLC M       ||  ||CF||  ||  ||align="left"| M ← M:CF << 1 
 |-
-| 0x7C..<br/>0x7D.. ||0||1||1||1||1||1||0||colspan="9"|''M''||align="left"| SWAP M      ||  ||  ||  ||  ||align="left"| Swap the high nibble and low nibble of A 
+| 0x7C..<br/>0x7D.. ||0||1||1||1||1||1||0||colspan="9"|''M''||align="left"| SWAP M      ||  ||  ||  ||  ||align="left"| Swap the high nibble and low nibble of M 
 |-
 | 0x7E..<br/>0x7F.. ||0||1||1||1||1||1||1||colspan="9"|''M''||align="left"| DELAY M     ||  ||  ||  ||  ||align="left"| Delay M+1 cycles, at end A ← 0 
 |-
