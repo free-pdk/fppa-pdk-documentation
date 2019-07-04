@@ -200,7 +200,7 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x0B.. ||0||1||0||1||1||1||0||colspan="6"|''M''||align="left"| CEQSN A, M  ||ZF||CF||AC||OV||align="left"| Skip next instruction if M is equal to A 
 |-
-| 0x0B.. ||0||1||0||1||1||1||1||colspan="6"|''M''||align="left"| CNEQSN A, M ||ZF||CF||AC||OV||align="left"| Skip next instruction if M is not equal to A 
+| 0x0B.. ||0||1||0||1||1||1||1||colspan="6"|''M''||colspan="6"| ''?'' 
 |-
 |colspan="20"|
 |-
@@ -226,7 +226,7 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x12.. ||1||0||0||1||0||colspan="8"|''k''||     align="left"| CEQSN A, ''k''  ||ZF||CF||AC||OV||align="left"| Skip next instruction if A equals k
 |-
-| 0x13.. ||1||0||0||1||1||colspan="8"|''k''||     align="left"| CNEQSN A, ''k'' ||ZF||CF||AC||OV||align="left"| Skip next instruction if A not equals k
+| 0x13.. ||1||0||0||1||1||colspan="8"|''k''||     colspan="6"| ''?''
 |-
 | 0x14.. ||1||0||1||0||0||colspan="8"|''k''||     align="left"| AND A, ''k''    ||ZF||  ||  ||  ||align="left"| A ← A & k
 |-
