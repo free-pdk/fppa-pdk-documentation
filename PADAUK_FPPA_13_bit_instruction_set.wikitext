@@ -120,13 +120,13 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 
 !        ||0||0||0||1||''c''|| colspan="3"|''bit pos''||colspan="4"|''4-bit MEM addr''||''c''||colspan="6"| Bit operations with memory
 |-
-| 0x02.. ||0||0||0||1||0|| colspan="3"|''n''||colspan="4"|''M''||0||align="left"| T0SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if clear
+| 0x02.. ||0||0||0||1||0|| colspan="3"|''n''||0||colspan="4"|''M''||align="left"| T0SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if clear
 |-
-| 0x02.. ||0||0||0||1||0|| colspan="3"|''n''||colspan="4"|''M''||1||align="left"| T1SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if set
+| 0x02.. ||0||0||0||1||0|| colspan="3"|''n''||1||colspan="4"|''M''||align="left"| T1SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if set
 |-
-| 0x03.. ||0||0||0||1||1|| colspan="3"|''n''||colspan="4"|''M''||0||align="left"| SET0 M.n    ||  ||  ||  ||  ||align="left"| Clear bit n of memory M
+| 0x03.. ||0||0||0||1||1|| colspan="3"|''n''||0||colspan="4"|''M''||align="left"| SET0 M.n    ||  ||  ||  ||  ||align="left"| Clear bit n of memory M
 |-
-| 0x03.. ||0||0||0||1||1|| colspan="3"|''n''||colspan="4"|''M''||1||align="left"| SET1 M.n    ||  ||  ||  ||  ||align="left"| Set bit n of memory M
+| 0x03.. ||0||0||0||1||1|| colspan="3"|''n''||1||colspan="4"|''M''||align="left"| SET1 M.n    ||  ||  ||  ||  ||align="left"| Set bit n of memory M
 |-
 |colspan="20"|
 |-
