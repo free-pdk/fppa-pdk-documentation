@@ -317,7 +317,7 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 |-
 | DF329  || ? || ? || ? || ? || ? || ?
 |-
-| DF69  || Y || Y || Y || Y || Y || Y
+| DF69   || Y || Y || Y || Y || Y || Y
 |-
 | MCS11  || Y || Y || Y || Y || Y || Y
 |-

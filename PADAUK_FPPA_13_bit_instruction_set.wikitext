@@ -1,5 +1,5 @@
 ==PADAUK FPPA core devices (13 bit)==
-These devices feature a 13-bit wide code memory. Byte order is little endian. The instruction set is called SYM_84B in Padauk include files. The SDCC backend will be called pdk13.
+These devices feature a 13-bit wide code memory. Byte order is little endian. The instruction set is called SYM_84B in Padauk include files. The SDCC backend is called pdk13.
 
 {|class="wikitable" style="text-align:center"
 |+ 13-bit FPPA instruction set
@@ -253,4 +253,25 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 
 There seem to be no optional instructions in this instruction set, there is no known implementation that supports MUL.
 
+{|class="wikitable" style="text-align:center"
+|+ Instruction support by device
+! Device
+|-
+| PMC150
+|-
+| PMC153
+|-
+| PMC156
+|-
+| PMS150
+|-
+| PMS150C
+|-
+| PMS153
+|-
+| PMS156
+|-
+| PMS15A
+|-
+|}
 

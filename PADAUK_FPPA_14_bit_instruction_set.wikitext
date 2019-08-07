@@ -269,6 +269,12 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |+ Instruction support by device
 ! Device || COMP A, M || COMP M, A || MUL || NADD A, M || NADD M, A || XOR IO, A
 |-
+| PFC151  || ? || ? || ? || ? || ? || ?
+|-
+| PFC154  || ? || ? || ? || ? || ? || ?
+|-
+| PFC232  || ? || ? || ? || ? || ? || ?
+|-
 | PFS154  || - || - || - || - || - || Y
 |-
 | PMC131  || Y || Y || Y || Y || Y || -
