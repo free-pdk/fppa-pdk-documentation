@@ -313,29 +313,29 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device
-! Device || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
+! Device || #FPPA || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
 |-
-| DF329  || ? || ? || ? || ? || ? || ?
+| DF329  || 8 || ? || ? || ? || ? || ? || ?
 |-
-| DF69   || Y || Y || Y || Y || Y || Y
+| DF69   || 8 || Y || Y || Y || Y || Y || Y
 |-
-| MCS11  || Y || Y || Y || Y || Y || Y
+| MCS11  || 8 || Y || Y || Y || Y || Y || Y
 |-
-| PMC232 || - || - || - || - || - || -
+| PMC232 || 2 || - || - || - || - || - || -
 |-
-| PMC234 || - || - || - || - || - || -
+| PMC234 || 2 || - || - || - || - || - || -
 |-
-| PMC251 || - || - || - || - || - || -
+| PMC251 || 2 || - || - || - || - || - || -
 |-
-| PMC271 || - || - || - || - || - || -
+| PMC271 || 2 || - || - || - || - || - || -
 |-
-| PMC884 || Y || Y || Y || Y || Y || Y
+| PMC884 || 8 || Y || Y || Y || Y || Y || Y
 |-
-| PMS232 || - || - || - || - || - || -
+| PMS232 || 2 || - || - || - || - || - || -
 |-
-| PMS234 || - || - || - || - || - || -
+| PMS234 || 2 || - || - || - || - || - || -
 |-
-| PMS271 || - || - || - || - || - || -
+| PMS271 || 2 || - || - || - || - || - || -
 |-
 |}
 

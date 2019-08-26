@@ -255,23 +255,23 @@ There seem to be no optional instructions in this instruction set, there is no k
 
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device
-! Device
+! Device || #FPPA
 |-
-| PMC150
+| PMC150 || 1
 |-
-| PMC153
+| PMC153 || 1
 |-
-| PMC156
+| PMC156 || 1
 |-
-| PMS150
+| PMS150 || 1
 |-
-| PMS150C
+| PMS150C || 1
 |-
-| PMS153
+| PMS153 || 1
 |-
-| PMS156
+| PMS156 || 1
 |-
-| PMS15A
+| PMS15A || 1
 |-
 |}
 

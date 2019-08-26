@@ -267,33 +267,37 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device
-! Device || COMP A, M || COMP M, A || MUL || NADD A, M || NADD M, A || XOR IO, A
+! Device || #FPPA || COMP A, M || COMP M, A || MUL || NADD A, M || NADD M, A || XOR IO, A
 |-
-| PFC151  || ? || ? || ? || ? || ? || ?
+| PFC151  || 1 || Y || Y || - || Y || Y || Y
 |-
-| PFC154  || ? || ? || ? || ? || ? || ?
+| PFC154  || 1 || Y || Y || - || Y || Y || Y
 |-
-| PFC232  || ? || ? || ? || ? || ? || ?
+| PFC161  || 1 || Y || Y || - || Y || Y || Y
 |-
-| PFS154  || - || - || - || - || - || Y
+| PFC232  || 2 || Y || Y || Y || Y || Y || Y
 |-
-| PMC131  || Y || Y || Y || Y || Y || -
+| PFS154  || 1 || - || - || - || - || - || Y
 |-
-| PMS130  || Y || Y || Y || Y || Y || -
+| PFS172  || 1 || Y || Y || - || Y || Y || Y
 |-
-| PMS131  || Y || Y || Y || Y || Y || -
+| PMC131  || 1 || Y || Y || Y || Y || Y || -
 |-
-| PMS132  || Y || Y || Y || Y || Y || Y
+| PMS130  || 1 || Y || Y || Y || Y || Y || -
 |-
-| PMS132B || Y || Y || Y || Y || Y || Y
+| PMS131  || 1 || Y || Y || Y || Y || Y || -
 |-
-| PMS152  || Y || Y || - || Y || Y || Y
+| PMS132  || 1 || Y || Y || Y || Y || Y || Y
 |-
-| PMS154B || Y || Y || - || Y || Y || Y
+| PMS132B || 1 || Y || Y || Y || Y || Y || Y
 |-
-| PMS154C || Y || Y || - || Y || Y || Y
+| PMS152  || 1 || Y || Y || - || Y || Y || Y
 |-
-| PMS171B || - || - || - || - || - || Y
+| PMS154B || 1 || Y || Y || - || Y || Y || Y
+|-
+| PMS154C || 1 || Y || Y || - || Y || Y || Y
+|-
+| PMS171B || 1 || - || - || - || - || - || Y
 |-
 |}
 
