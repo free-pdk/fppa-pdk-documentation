@@ -113,9 +113,9 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 |-
 | 0x05..<br/>0x05.. ||0||0||0||0||0||1||0||colspan="8"|''M''||1||align="left"| PUSHW M   ||  ||  ||  ||  ||align="left"| Push word from memory M to stack (last bit of M set to 1, M must be word aligned) (if available)
 |-
-| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||0||align="left"| IGOTO M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 0, M must be word aligned)
+| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||0||align="left"| IGOTO M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 0, M must be word aligned) (if available)
 |-
-| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||1||align="left"| ICALL M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 1, M must be word aligned)
+| 0x06..<br/>0x07.. ||0||0||0||0||0||1||1||colspan="8"|''M''||1||align="left"| ICALL M   ||  ||  ||  ||  ||align="left"| TODO (last bit of M set to 1, M must be word aligned) (if available)
 |-
 | 0x08..<br/>0x09.. ||0||0||0||0||1||0||0||colspan="8"|''M''||0||align="left"| IDXM M, A ||  ||  ||  ||  ||align="left"| [M] ← A (last bit of M set to 0, M must be word aligned), 2 cycles
 |-
@@ -311,31 +311,33 @@ These devices feature a 16-bit wide code memory. Byte order is little endian. Th
 
 |}
 
+The icall and igoto instructions have been found in the datasheets of some older, no longer available devices, such as the PES331, only.
+
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device
-! Device || #FPPA || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
+! Device || #FPPA || ICALL || IGOTO || MUL || PMODE N || PUSHW pcN || PUSHW M || POPW M || POPW PCn
 |-
-| DF329  || 8 || ? || ? || ? || ? || ? || ?
+| DF329  || 8 || ? || ? || ? || ? || ? || ? || ? || ?
 |-
-| DF69   || 8 || Y || Y || Y || Y || Y || Y
+| DF69   || 8 || - || - || Y || Y || Y || Y || Y || Y
 |-
-| MCS11  || 8 || Y || Y || Y || Y || Y || Y
+| MCS11  || 8 || - || - || Y || Y || Y || Y || Y || Y
 |-
-| PMC232 || 2 || - || - || - || - || - || -
+| PMC232 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMC234 || 2 || - || - || - || - || - || -
+| PMC234 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMC251 || 2 || - || - || - || - || - || -
+| PMC251 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMC271 || 2 || - || - || - || - || - || -
+| PMC271 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMC884 || 8 || Y || Y || Y || Y || Y || Y
+| PMC884 || 8 || - || - || Y || Y || Y || Y || Y || Y
 |-
-| PMS232 || 2 || - || - || - || - || - || -
+| PMS232 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMS234 || 2 || - || - || - || - || - || -
+| PMS234 || 2 || - || - || - || - || - || - || - || -
 |-
-| PMS271 || 2 || - || - || - || - || - || -
+| PMS271 || 2 || - || - || - || - || - || - || - || -
 |-
 |}
 
