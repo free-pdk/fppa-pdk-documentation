@@ -64,3 +64,7 @@ WORD BASED OFFSET: LAST 16 WORDS:
        
        ==> BIT12: ?
        ==> BIT13: ?
+
+Note that the PFS154 and PFS173 do not use the CodeOption/Fuse to set LVD/LVR level, but
+a special, undocumented register MISCLVR. See easy-pdk-programmer-software/Examples/src/easypdk/
+for definitions.
