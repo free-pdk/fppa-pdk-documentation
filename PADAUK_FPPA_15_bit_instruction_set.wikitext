@@ -277,6 +277,8 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |+ Instruction support by device (Y = supported, u = undocumented but working) 
 ! Device  || #FPPA || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO
 |-
+| MCU371  || ? || ? || ? || ? || ? || ?
+|-
 | PFS173  || 1 || - || u || u || u || -
 |-
 | PMS132K || 1 || ? || ? || ? || ? || ?
