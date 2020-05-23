@@ -15,7 +15,7 @@ n: Number of hardware threads ("FPPAs")
 
 NN: Part number suffix, numeric
 
-(c): Optional part number suffic, alphabetic; possibly a revision code.
+(c): Optional part number suffix, alphabetic; possibly a revision code.
 
 Odd stuff:
 
@@ -62,5 +62,16 @@ PDK_3S_EV
 PDK_EV5
 PDK82S_EV
 
-Nothing is known about these.
+Those are only known from Mini-C files. Nothing else is known about these.
+
+DF329
+DF69
+MCS11
+
+These are missing from Mini-C and the catalog, but there are datasheets. All of them are pdk16 devies with 8 hardware threads.
+
+DF319
+DF339
+
+These are missing from Mini-C and the catalog, but there are datasheets. However, teh datsheets contain little information. These are probably pre-programmed OTP devices for use as motor controllers.
 
