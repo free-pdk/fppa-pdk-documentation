@@ -263,9 +263,15 @@ There seem to be no optional instructions in this instruction set, there is no k
 |-
 | PMC156 || 1
 |-
+| PMC166 || 1
+|-
 | PMS150 || 1
 |-
+| PMS150B || 1
+|-
 | PMS150C || 1
+|-
+| PMS150G || 1
 |-
 | PMS153 || 1
 |-

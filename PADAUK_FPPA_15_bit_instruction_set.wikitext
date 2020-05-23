@@ -275,13 +275,15 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device (Y = supported, u = undocumented but working) 
-! Device || #FPPA || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO
+! Device  || #FPPA || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO
 |-
-| PFS173 || 1 || - || u || u || u || -
+| PFS173  || 1 || - || u || u || u || -
 |-
-| PMS133 || 1 || Y || Y || Y || Y || Y
+| PMS132K || 1 || ? || ? || ? || ? || ?
 |-
-| PMS134 || 1 || Y || Y || Y || Y || Y
+| PMS133  || 1 || Y || Y || Y || Y || Y
+|-
+| PMS134  || 1 || Y || Y || Y || Y || Y
 |-
 |}
 
