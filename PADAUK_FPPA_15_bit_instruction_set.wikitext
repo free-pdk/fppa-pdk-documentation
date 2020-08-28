@@ -279,6 +279,8 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |-
 | MCU371  || ? || ? || ? || ? || ? || ?
 |-
+| PFS123  || 1 || - || - || - || - || -
+|-
 | PFS173  || 1 || - || u || u || u || -
 |-
 | PMS132K || 1 || ? || ? || ? || ? || ?
