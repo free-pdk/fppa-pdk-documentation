@@ -118,7 +118,7 @@ These devices feature a 13-bit wide code memory. Byte order is little endian. Th
 |-
 
 
-!        ||0||0||0||1||''c''|| colspan="3"|''bit pos''||colspan="4"|''4-bit MEM addr''||''c''||colspan="6"| Bit operations with memory
+!        ||0||0||0||1||''c''|| colspan="3"|''bit pos''||''c''||colspan="4"|''4-bit MEM addr''||colspan="6"| Bit operations with memory
 |-
 | 0x02.. ||0||0||0||1||0|| colspan="3"|''n''||0||colspan="4"|''M''||align="left"| T0SN M.n    ||  ||  ||  ||  ||align="left"| Test bit n of memory M and skip next instruction if clear
 |-
