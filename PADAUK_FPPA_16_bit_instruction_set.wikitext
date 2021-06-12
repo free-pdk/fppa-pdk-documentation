@@ -323,6 +323,14 @@ The icall and igoto instructions have been found in the datasheets of some older
 |-
 | MCS11  || 8 || - || - || Y || Y || Y || Y || Y || Y
 |-
+| MF520  || 8 || ? || ? || ? || ? || ? || ? || ? || ?
+|-
+| MF610  || 8 || ? || ? || ? || ? || ? || ? || ? || ?
+|-
+| MF616  || 8 || ? || ? || ? || ? || ? || ? || ? || ?
+|-
+| PFC886 || 8 || - || - || - || Y || Y || Y || Y || Y
+|-
 | PMC232 || 2 || - || - || - || - || - || - || - || -
 |-
 | PMC234 || 2 || - || - || - || - || - || - || - || -
@@ -338,8 +346,6 @@ The icall and igoto instructions have been found in the datasheets of some older
 | PMS234 || 2 || - || - || - || - || - || - || - || -
 |-
 | PMS271 || 2 || - || - || - || - || - || - || - || -
-|-
-| PFC886 || 8 || - || - || - || Y || Y || Y || Y || Y
 |-
 |}
 
