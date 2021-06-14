@@ -349,5 +349,5 @@ The icall and igoto instructions have been found in the datasheets of some older
 |-
 |}
 
-While the PFC886 does not have the mul instruction, it does have hardware support for 8x16 and 16x16 multiplication and 16/16 division.
+While the PFC886 does not have the mul instruction, it does have hardware support for 8x16 and 16x16 multiplication and 16/16 division. The MF520 and MF616 are preprogrammed versions of the PFC886.
 
