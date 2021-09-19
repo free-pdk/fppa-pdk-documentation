@@ -289,5 +289,7 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |-
 | PMS134  || 1 || Y || Y || Y || Y || Y
 |-
+| XDM4105 || ? || ? || ? || ? || ? || ?
+|-
 |}
 

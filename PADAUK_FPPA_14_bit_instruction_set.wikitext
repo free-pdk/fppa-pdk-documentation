@@ -321,5 +321,11 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |-
 | PMS171C || 1 || ? || ? || ? || ? || ? || ?
 |-
+| XDM4102 || ? || ? || ? || ? || ? || ? || ?
+|-
+| XDM4103 || ? || ? || ? || ? || ? || ? || ?
+|-
+| XDM4104 || ? || ? || ? || ? || ? || ? || ?
+|-
 |}
 
