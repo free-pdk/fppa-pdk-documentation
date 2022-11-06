@@ -279,5 +279,7 @@ There seem to be no optional instructions in this instruction set, there is no k
 |-
 | PMS15A || 1
 |-
+| PMS15B || 1
+|-
 |}
 
