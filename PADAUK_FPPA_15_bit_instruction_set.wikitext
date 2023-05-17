@@ -1,5 +1,5 @@
 ==PADAUK FPPA core devices (15 bit)==
-These devices feature a 15-bit wide code memory. Byte order is little endian. The instruction set is called SYM_86B in Padauk include files. The SDCC backend is called pdk15.
+These devices feature a 15-bit wide code memory. Byte order is little endian. The instruction set is called SYM_86B or SYM_86A in Padauk include files. The SDCC backend is called pdk15.
 
 {|class="wikitable" style="text-align:center"
 |+ 15-bit FPPA instruction set
@@ -282,6 +282,10 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 | PFS123  || 1 || - || Y || Y || Y || -
 |-
 | PFS173  || 1 || - || u || u || u || -
+|-
+| PML100  || 1 || - || - || - || - || -
+|-
+| PML100B || 1 || - || - || - || - || -
 |-
 | PMS132K || 1 || ? || ? || ? || ? || ?
 |-
