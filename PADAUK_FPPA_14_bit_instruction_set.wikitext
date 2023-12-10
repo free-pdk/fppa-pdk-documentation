@@ -283,6 +283,8 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |-
 | PFS122  || 1 || Y || Y || - || - || Y || Y || - || Y
 |-
+| PFS122B || 1 || Y || Y || - || - || Y || Y || - || Y
+|-
 | PFS154  || 1 || - || - || - || - || - || - || - || Y
 |-
 | PFS172  || 1 || Y || Y || - || - || Y || Y || - || Y
@@ -294,6 +296,8 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 | PMC131  || 1 || Y || Y || - || Y || Y || Y || - || -
 |-
 | PML100  || 1 || - || - || - || - || - || - || - || Y
+|-
+| PMS121  || 1 || - || - || - || - || - || - || - || Y
 |-
 | PMS130  || 1 || Y || Y || - || Y || Y || Y || - || -
 |-
@@ -332,6 +336,10 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 | XDM4103 || ? || ? || ? || - || ? || ? || ? || ? || ?
 |-
 | XDM4104 || ? || ? || ? || - || ? || ? || ? || ? || ?
+|-
+| YMB1801 || ? || ? || ? || ? || ? || ? || ? || ? || ?
+|-
+| YMB1805 || ? || ? || ? || ? || ? || ? || ? || ? || ?
 |-
 |}
 
