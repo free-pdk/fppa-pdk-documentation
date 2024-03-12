@@ -285,6 +285,8 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |-
 | PFS122B || 1 || Y || Y || - || - || Y || Y || - || Y
 |-
+| PFS132  || 1 || Y || Y || - || Y || Y || Y || - || Y
+|-
 | PFS154  || 1 || - || - || - || - || - || - || - || Y
 |-
 | PFS172  || 1 || Y || Y || - || - || Y || Y || - || Y

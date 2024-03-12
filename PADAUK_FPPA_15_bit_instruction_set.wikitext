@@ -275,29 +275,31 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 
 {|class="wikitable" style="text-align:center"
 |+ Instruction support by device (Y = supported, u = undocumented but working) 
-! Device  || #FPPA || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO
+! Device  || #FPPA || MUL || NMOV A, M || NMOV M, A || SWAP M || XOR A, IO || XOR IO, A
 |-
-| MCU371  || ? || ? || ? || ? || ? || ?
+| MCU371  || ? || ? || ? || ? || ? || ? || -
 |-
-| PFS123  || 1 || - || Y || Y || Y || -
+| PFS123  || 1 || - || Y || Y || Y || - || -
 |-
-| PFS173  || 1 || - || u || u || u || -
+| PFS173  || 1 || - || u || u || u || - || -
 |-
-| PML100  || 1 || - || - || - || - || -
+  PGS134  || 1 || Y || Y || Y || Y || Y || Y
 |-
-| PML100B || 1 || - || - || - || - || -
+| PML100  || 1 || - || - || - || - || - || -
 |-
-| PMS132K || 1 || ? || ? || ? || ? || ?
+| PML100B || 1 || - || - || - || - || - || -
 |-
-| PMS133  || 1 || Y || Y || Y || Y || Y
+| PMS132K || 1 || ? || ? || ? || ? || ? || -
 |-
-| PMS134  || 1 || Y || Y || Y || Y || Y
+| PMS133  || 1 || Y || Y || Y || Y || Y || -
 |-
-| PMS152E || 1 || - || - || - || - || -
+| PMS134  || 1 || Y || Y || Y || Y || Y || -
 |-
-| PMS160  || 1 || - || - || - || - || -
+| PMS152E || 1 || - || - || - || - || - || -
 |-
-| XDM4105 || ? || ? || ? || ? || ? || ?
+| PMS160  || 1 || - || - || - || - || - || -
+|-
+| XDM4105 || ? || ? || ? || ? || ? || ? || -
 |-
 |}
 
