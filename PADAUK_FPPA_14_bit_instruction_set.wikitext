@@ -317,6 +317,8 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |-
 | PMS154C || 1 || Y || Y || - || - || Y || Y || - || Y
 |-
+| PMS154G || 1 || Y || Y || - || - || Y || Y || - || Y
+|-
 | PMS155  || 1 || ? || ? || - || ? || ? || ? || - || ?
 |-
 | PMS155B || 1 || ? || ? || - || ? || ? || ? || - || ?
