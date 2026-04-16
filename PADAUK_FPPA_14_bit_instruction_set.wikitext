@@ -299,6 +299,8 @@ These devices feature a 14-bit wide code memory. Byte order is little endian. Th
 |-
 | PML100  || 1 || - || - || - || - || - || - || - || Y
 |-
+| PMS120  || 1 || Y || Y || - || - || Y || Y || - || Y
+|-
 | PMS121  || 1 || - || - || - || - || - || - || - || Y
 |-
 | PMS130  || 1 || Y || Y || - || Y || Y || Y || - || -

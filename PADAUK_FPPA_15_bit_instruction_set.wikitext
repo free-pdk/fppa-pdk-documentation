@@ -281,6 +281,8 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 |-
 | PFS123  || 1 || - || Y || Y || Y || - || -
 |-
+| PFS123B || 1 || ? || ? || ? || ? || ? || ?
+|-
 | PFS173  || 1 || - || u || u || u || - || -
 |-
   PGS134  || 1 || Y || Y || Y || Y || Y || Y
@@ -294,6 +296,8 @@ These devices feature a 15-bit wide code memory. Byte order is little endian. Th
 | PMS133  || 1 || Y || Y || Y || Y || Y || -
 |-
 | PMS134  || 1 || Y || Y || Y || Y || Y || -
+|-
+| PMS134G || 1 || Y || Y || Y || Y || Y || Y
 |-
 | PMS152E || 1 || - || - || - || - || - || -
 |-
